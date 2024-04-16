@@ -1,0 +1,19 @@
+@mixin container-section {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+@mixin flex(
+  $flex-flow: row nowrap,
+  $justify-content: flex-start,
+  $align-content: normal,
+  $align-items: stretch
+) {
+  display: flex;
+  flex-flow: $flex-flow;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  align-content: $align-content;
+}
