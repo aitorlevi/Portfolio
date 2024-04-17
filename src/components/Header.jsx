@@ -1,6 +1,11 @@
 import React from "react";
 
 export const Header = () => {
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="header">
       <div className="header-container">
@@ -22,16 +27,16 @@ export const Header = () => {
         <nav className="navigation">
           <ul>
             <li>
-              <a href={`#resume`}>Resume</a>
+              <a onClick={(e) => scrollTo("resume")}>Resume</a>
             </li>
             <li>
-              <a href={`#portfolio`}>Portfolio</a>
+              <a onClick={(e) => scrollTo("portfolio")}>Portfolio</a>
             </li>
             <li>
-              <a href={`#aboutMe`}>About Me</a>
+              <a onClick={(e) => scrollTo("aboutMe")}>About Me</a>
             </li>
             <li>
-              <a href={`#contact`}>Contact</a>
+              <a onClick={(e) => scrollTo("contact")}>Contact</a>
             </li>
           </ul>
         </nav>
