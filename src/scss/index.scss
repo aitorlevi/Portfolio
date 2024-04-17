@@ -222,10 +222,13 @@ header {
     gap: 50px;
     list-style: none;
     li {
-      svg {
-        display: block;
+      width: 50px;
+      img {
         width: 50px;
-        height: auto;
+        border-radius: 5px;
+        path {
+          fill: $testColor2;
+        }
       }
     }
   }

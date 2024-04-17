@@ -1,6 +1,14 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React from "react";
 import mir from "/images/about-me/mir.gif";
+import react from "../assets/react.svg";
+import css from "../assets/css.svg";
+import html from "../assets/html.svg";
+import js from "../assets/js.svg";
+import node from "../assets/node.svg";
+import photoshop from "../assets/photoshop.svg";
+import scss from "../assets/scss.svg";
+import ts from "../assets/ts.svg";
+import jQuery from "../assets/jquery.svg";
 
 export const AboutMe = () => {
   const years = 28;
@@ -76,22 +84,31 @@ export const AboutMe = () => {
         <p>Puedes ver un poco de las herramientas que uso para mi trabajo</p>
         <ul className="technology">
           <li>
-            <FontAwesomeIcon icon="fa-brands fa-html5" />
+            <img src={react} className="logo" />
           </li>
           <li>
-            <FontAwesomeIcon icon="fa-brands fa-css3" />
+            <img src={css} className="logo" />
           </li>
           <li>
-            <FontAwesomeIcon icon="fa-brands fa-js" />
+            <img src={html} className="logo" />
           </li>
           <li>
-            <FontAwesomeIcon icon="fa-brands fa-node" />
+            <img src={js} className="logo" />
           </li>
           <li>
-            <FontAwesomeIcon icon="fa-brands fa-react" />
+            <img src={node} className="logo" />
           </li>
           <li>
-            <FontAwesomeIcon icon="fa-brands fa-sass" />
+            <img src={photoshop} className="logo" />
+          </li>
+          <li>
+            <img src={scss} className="logo" />
+          </li>
+          <li>
+            <img src={ts} className="logo" />
+          </li>
+          <li>
+            <img src={jQuery} className="logo" />
           </li>
         </ul>
       </section>
