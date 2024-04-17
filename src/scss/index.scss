@@ -80,7 +80,7 @@ header {
     gap: 50px;
     .project {
       position: relative;
-      img {
+      .project-image {
         display: block;
         width: 100%;
         border-radius: 15px;
@@ -92,25 +92,7 @@ header {
         text-align: left;
         padding: 10px;
         border-radius: 15px;
-        ul {
-          padding-inline-start: 15px;
-          margin: 0;
-        }
-        .tech {
-          width: 100%;
-          display: flex;
-          flex-flow: row nowrap;
-          justify-content: space-around;
-          align-items: center;
-          .font-awesome {
-            width: 30px;
-            height: auto;
-          }
-          svg {
-            width: 50px;
-            height: auto;
-          }
-        }
+        transition: 500ms all;
       }
       &:hover {
         .info {
@@ -131,7 +113,7 @@ header {
       padding: 30px 0;
       display: flex;
       flex-flow: row nowrap;
-      img {
+      .resume-image {
         border-radius: 25px;
       }
       .title {
@@ -146,33 +128,6 @@ header {
           padding: 0 15px;
           li {
             padding: 5px;
-          }
-        }
-
-        .techs {
-          width: 100%;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: flex-start;
-          align-items: center;
-          align-content: flex-start;
-          gap: 30px;
-          padding: 0;
-          li {
-            width: 90px;
-            margin: 0 15px;
-            list-style: none;
-            display: flex;
-            flex-flow: column nowrap;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-
-            .font-awesome {
-              width: 50px;
-              height: 50px;
-              margin-bottom: 5px;
-            }
           }
         }
       }
@@ -217,18 +172,29 @@ header {
 
 .toolkit-section {
   @include container-section;
-  ul {
-    @include flex($justify-content: center);
-    gap: 50px;
-    list-style: none;
-    li {
+
+  .technologies-container {
+    width: 80%;
+    margin: 100px auto;
+  }
+}
+
+.technologies {
+  @include flex($flex-flow: row wrap, $justify-content: center);
+  gap: 50px;
+  list-style: none;
+  padding: 0;
+  li {
+    display: flex;
+    @include flex($flex-flow: column, $align-items: center);
+    gap: 20px;
+    font-weight: 500;
+    img {
       width: 50px;
-      img {
-        width: 50px;
-        border-radius: 5px;
-        path {
-          fill: $testColor2;
-        }
+      max-width: 50px;
+      border-radius: 5px;
+      path {
+        fill: $testColor2;
       }
     }
   }
@@ -236,6 +202,7 @@ header {
 
 .contact-section {
   background-color: $testColor3;
+  padding: 100px 0;
 
   .contact-container {
     @include container-section;

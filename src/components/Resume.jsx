@@ -1,5 +1,15 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import mir from "/images/about-me/mir.gif";
+import react from "../assets/react.svg";
+import css from "../assets/css.svg";
+import html from "../assets/html.svg";
+import js from "../assets/js.svg";
+import node from "../assets/node.svg";
+import photoshop from "../assets/photoshop.svg";
+import scss from "../assets/scss.svg";
+import ts from "../assets/ts.svg";
+import jQuery from "../assets/jquery.svg";
+import { Technologies } from "./Technologies";
 
 export const Resume = () => {
   const testProject = {
@@ -24,22 +34,21 @@ export const Resume = () => {
       ],
     ],
     technologies: [
-      ["fa-brands fa-html5", "HTML5"],
-      ["fa-brands fa-sass", "SASS"],
-      ["fa-brands fa-react", "REACT"],
-      ["fa-brands fa-html5", "HTML5"],
+      { img: html, name: "HTML5" },
+      { img: css, name: "CSS3" },
+      { img: js, name: "JavaScript" },
     ],
     image: "https://picsum.photos/300/350",
   };
   const resume = [testProject, testProject, testProject, testProject];
   return (
     <section className="resume-section" id="resume">
-      <h2>Resume</h2>
+      <h2>&lt;resume&gt;</h2>
       <div className="resume-container">
         {resume.map((company, index) => {
           return (
             <article key={index} className="company">
-              <img src={company.image} />
+              <img src={company.image} className="resume-image" />
               <div className="company-content">
                 <h3 className="title">{company.title}</h3>
                 <ul className="tasks">
@@ -51,24 +60,13 @@ export const Resume = () => {
                     );
                   })}
                 </ul>
-                <ul className="techs">
-                  {company.technologies.map((tech, index) => {
-                    return (
-                      <li key={index}>
-                        <FontAwesomeIcon
-                          className="font-awesome"
-                          icon={tech[0]}
-                        />
-                        <span>{tech[1]}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
+                <Technologies technologies={company.technologies} />
               </div>
             </article>
           );
         })}
       </div>
+      <h2>&lt;/resume&gt;</h2>
     </section>
   );
 };
