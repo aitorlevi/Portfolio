@@ -58,6 +58,21 @@ header {
         }
       }
     }
+    .social {
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 5vh;
+        padding: 0;
+        li {
+          list-style: none;
+          img {
+            width: 30px;
+          }
+        }
+      }
+    }
   }
 }
 @media all and (max-width: 800px) {

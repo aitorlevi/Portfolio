@@ -1,4 +1,6 @@
 import React from "react";
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
 
 export const Header = () => {
   const scrollTo = (id) => {
@@ -27,19 +29,35 @@ export const Header = () => {
         <nav className="navigation">
           <ul>
             <li>
-              <a onClick={(e) => scrollTo("resume")}>Resume</a>
+              <a onClick={() => scrollTo("resume")}>Resume</a>
             </li>
             <li>
-              <a onClick={(e) => scrollTo("portfolio")}>Portfolio</a>
+              <a onClick={() => scrollTo("portfolio")}>Portfolio</a>
             </li>
             <li>
-              <a onClick={(e) => scrollTo("aboutMe")}>About Me</a>
+              <a onClick={() => scrollTo("aboutMe")}>About Me</a>
             </li>
             <li>
-              <a onClick={(e) => scrollTo("contact")}>Contact</a>
+              <a onClick={() => scrollTo("contact")}>Contact</a>
             </li>
           </ul>
         </nav>
+        <div className="social">
+          <ul>
+            <li>
+              <img src={github} />
+            </li>
+            <li>
+              <img src={linkedin} />
+            </li>
+            <li>
+              <span>aitorlevi@gmail.com</span>
+            </li>
+            <li>
+              <span>Resume</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
   );
