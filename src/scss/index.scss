@@ -2,42 +2,17 @@
 @import "mixins";
 @import "statics";
 
-body {
-  text-align: left;
-  font-size: 1rem;
-  line-height: normal;
-  padding: 0px;
-  margin: 0px;
-  color: $fontColor;
-  background: linear-gradient(-45deg, #fff, $backgroundColor2);
-  background-size: auto;
-  animation: gradient 15s ease infinite;
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-}
-
 header {
   .header-container {
     @include container-section();
-    @include flex(column, center, center, center);
+    @include flex(column, center, center, center, 40px);
     height: 100vh;
-    gap: 7vh;
     .navigation {
       ul {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        gap: 5vh;
+        gap: 20px;
         padding: 0;
         li {
           list-style: none;
@@ -63,7 +38,6 @@ header {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        gap: 5vh;
         padding: 0;
         li {
           list-style: none;
@@ -75,11 +49,6 @@ header {
     }
   }
 }
-@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
-}
 
 .home-section {
   @include container-section();
@@ -89,11 +58,7 @@ header {
 .portfolio-section {
   @include container-section;
   .projects-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: flex-start;
-    gap: 50px;
+    @include flex(row wrap, center, flex-start, 50px);
     .project {
       position: relative;
       .project-image {
@@ -124,26 +89,17 @@ header {
 
 .resume-section {
   @include container-section;
-
   .collapsible {
-    background-color: $buttonColor;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
     text-align: left;
-    outline: none;
-    font-size: 1.5rem;
-    border-radius: 15px;
+    width: 100%;
     transition: all 0.5s;
+    color: $backgroundColor;
 
     &:hover {
       background-color: $letterColor;
     }
     &:after {
       content: "\02C5";
-      color: white;
       font-weight: bold;
       float: right;
       margin-left: 5px;
@@ -152,7 +108,7 @@ header {
 
   .active {
     background-color: $letterColor;
-    border-radius: 15px 15px 0 0;
+    border-radius: 5px 5px 0 0;
 
     &:after {
       content: "\02C4";
@@ -165,19 +121,22 @@ header {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     background-color: rgba($color: $backgroundColor, $alpha: 0.5);
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 0 5px 5px;
+    .date {
+      font-weight: bold;
+    }
   }
 }
 
 .about-me-section {
   @include container-section;
   .about-me-container {
-    @include flex;
-    .image {
-      text-align: right;
-      img {
-        width: 80%;
-      }
+    @include flex(column);
+
+    img {
+      margin: 0 auto;
+      width: 70%;
+      border-radius: 15px;
     }
     .images-hover {
       color: $buttonColor;
@@ -208,24 +167,22 @@ header {
   @include container-section;
 
   .technologies-container {
-    width: 80%;
-    margin: 100px auto;
+    margin: 0 auto;
   }
 }
 
 .technologies {
-  @include flex($flex-flow: row wrap, $justify-content: center);
-  gap: 50px;
+  @include flex($flex-flow: row wrap, $justify-content: space-around);
   list-style: none;
   padding: 0;
   li {
     display: flex;
     @include flex($flex-flow: column, $align-items: center);
-    gap: 20px;
+
     font-weight: 500;
+    width: 80px;
     img {
-      width: 50px;
-      max-width: 50px;
+      width: 40px;
       border-radius: 5px;
       path {
         fill: $buttonColor;
@@ -236,18 +193,19 @@ header {
 
 .contact-section {
   background-color: $letterColor;
-  padding: 100px 0;
 
   .contact-container {
     @include container-section;
+    padding: 30px 0;
+    .contact-information {
+      margin-bottom: 20px;
+    }
     .contact-data {
-      display: flex;
+      @include flex(column nowrap);
       margin-bottom: 50px;
       .contact-form {
         width: 100%;
         @include flex($flex-flow: column);
-        margin: 0 15px;
-        gap: 20px 0;
       }
     }
   }

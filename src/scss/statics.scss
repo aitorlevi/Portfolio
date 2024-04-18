@@ -1,25 +1,36 @@
 @import "variables";
-
-h1 {
-  font-size: 4rem;
-  margin: 20px 0;
-}
-h2 {
-  font-size: 2.5rem;
-  margin: 15px 0;
-}
-h3 {
-  font-size: 2rem;
-}
-h4 {
-  font-size: 1rem;
-}
+@import "mixins";
 
 * {
   box-sizing: border-box;
   letter-spacing: 1px;
   font-family: "Montserrat", sans-serif;
 }
+
+body {
+  text-align: left;
+  font-size: 1rem;
+  line-height: normal;
+  padding: 0px;
+  margin: 0px;
+  color: $fontColor;
+  background: linear-gradient(-45deg, #fff, $backgroundColor2);
+  background-size: 1000%;
+  @include animation("gradient 15s ease infinite");
+}
+
+h1 {
+  font-size: 8vw;
+  margin: 20px 0;
+}
+h2 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+}
+h3 {
+  font-size: 1rem;
+}
+
 p {
   line-height: 20px;
 }
@@ -63,6 +74,7 @@ input[type="button"] {
   border-radius: 5px;
   background-color: $buttonColor;
   padding: 10px 20px;
+  font-size: 1rem;
   color: white;
   text-transform: uppercase;
   &:hover {

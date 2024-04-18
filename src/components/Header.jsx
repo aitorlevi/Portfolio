@@ -1,6 +1,6 @@
 import React from "react";
-import github from "../assets/github.svg";
-import linkedin from "../assets/linkedin.svg";
+import github from "../assets/other/github.svg";
+import linkedin from "../assets/other/linkedin.svg";
 
 export const Header = () => {
   const scrollTo = (id) => {

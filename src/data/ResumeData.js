@@ -1,13 +1,12 @@
-import mir from "/images/about-me/mir.gif";
-import react from "../assets/react.svg";
-import css from "../assets/css.svg";
-import html from "../assets/html.svg";
-import js from "../assets/js.svg";
-import node from "../assets/node.svg";
-import photoshop from "../assets/photoshop.svg";
-import scss from "../assets/scss.svg";
-import ts from "../assets/ts.svg";
-import jQuery from "../assets/jquery.svg";
+import react from "../assets/frontEnd/react.svg";
+import css from "../assets/frontEnd/css.svg";
+import html from "../assets/frontEnd/html.svg";
+import js from "../assets/frontEnd/js.svg";
+import node from "../assets/backEnd/node.svg";
+import photoshop from "../assets/design/photoshop.svg";
+import scss from "../assets/frontEnd/scss.svg";
+import ts from "../assets/frontEnd/ts.svg";
+import jQuery from "../assets/frontEnd/jquery.svg";
 
 const companies = [
   {

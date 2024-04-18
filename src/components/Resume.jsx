@@ -24,7 +24,7 @@ export const Resume = () => {
               {company.title}
             </button>
             <div className="content" id={`content` + index}>
-              <h4>{company.date}</h4>
+              <p className="date">{company.date}</p>
               <p>{company.description}</p>
               <ul className="tasks">
                 {company.tasks.map((task, index) => {

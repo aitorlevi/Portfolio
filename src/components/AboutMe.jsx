@@ -1,29 +1,8 @@
 import React from "react";
 import mir from "/images/about-me/mir.gif";
-import react from "../assets/react.svg";
-import css from "../assets/css.svg";
-import html from "../assets/html.svg";
-import js from "../assets/js.svg";
-import node from "../assets/node.svg";
-import photoshop from "../assets/photoshop.svg";
-import scss from "../assets/scss.svg";
-import ts from "../assets/ts.svg";
-import jQuery from "../assets/jquery.svg";
-import { Technologies } from "./Technologies";
 
 export const AboutMe = () => {
   const years = 28;
-  const technologies = [
-    { img: html, name: "HTML5" },
-    { img: css, name: "CSS3" },
-    { img: js, name: "JavaScript" },
-    { img: jQuery, name: "jQuery" },
-    { img: scss, name: "SCSS" },
-    { img: ts, name: "TypeScript" },
-    { img: node, name: "Node JS" },
-    { img: react, name: "React" },
-    { img: photoshop, name: "Photoshop" },
-  ];
 
   const showImage = (id, e) => {
     console.log(e);
@@ -86,19 +65,8 @@ export const AboutMe = () => {
               agua!
             </p>
           </div>
-          <div className="image">
-            <img src="../images/about-me/me.png" />
-          </div>
+          <img src="../images/about-me/me.png" />
         </div>
-      </section>
-      <section className="toolkit-section">
-        <h2>&lt;herramientas que utilizo&gt;</h2>
-        <p>Puedes ver un poco de las herramientas que uso para mi trabajo</p>
-        <div className="technologies-container">
-          <Technologies technologies={technologies} />
-        </div>
-        <h2>&lt;/herramientas que utilizo&gt;</h2>
-        <h2>&lt;/sobre mí&gt;</h2>
       </section>
     </>
   );
