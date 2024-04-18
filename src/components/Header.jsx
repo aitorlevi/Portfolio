@@ -7,7 +7,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header>
       <div className="header-container">
         <div className="presentation">
           <p>¡Hola! Soy</p>

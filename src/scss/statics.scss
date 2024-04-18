@@ -30,25 +30,25 @@ p {
 }
 
 .red-color {
-  color: $testColor3;
+  color: $letterColor;
   font-weight: bold;
 }
 
 .orange-color {
-  color: $testColor2;
+  color: $buttonColor;
   font-weight: bold;
 }
 
 input[type="text"],
 textarea {
   border: none;
-  background-color: $testColor1;
+  background-color: $backgroundColor2;
   padding: 10px;
   border-radius: 5px;
 
   &:focus {
     outline: inset;
-    color: $testColor2 !important;
+    color: $buttonColor !important;
   }
 }
 
@@ -59,14 +59,14 @@ textarea {
 button,
 input[type="submit"],
 input[type="button"] {
-  border: 2px solid $testColor2;
+  border: 2px solid $buttonColor;
   border-radius: 5px;
-  background-color: $testColor2;
+  background-color: $buttonColor;
   padding: 10px 20px;
   color: white;
   text-transform: uppercase;
   &:hover {
     background-color: $backgroundColor;
-    color: $testColor2;
+    color: $buttonColor;
   }
 }

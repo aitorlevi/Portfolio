@@ -9,7 +9,7 @@ body {
   padding: 0px;
   margin: 0px;
   color: $fontColor;
-  background: linear-gradient(-45deg, #fff, $testColor1);
+  background: linear-gradient(-45deg, #fff, $backgroundColor2);
   background-size: auto;
   animation: gradient 15s ease infinite;
 
@@ -50,7 +50,7 @@ header {
           }
 
           a:hover {
-            background: $testColor2;
+            background: $buttonColor;
             font-size: 1.1rem;
             font-weight: bold;
             transition: all 500ms;
@@ -109,30 +109,48 @@ header {
 
 .resume-section {
   @include container-section;
-  .resume-container {
-    .company {
-      padding: 30px 0;
-      display: flex;
-      flex-flow: row nowrap;
-      .resume-image {
-        border-radius: 25px;
-      }
-      .title {
-        margin-top: 0;
-      }
 
-      .company-content {
-        padding: 0 20px;
-        .tasks {
-          margin: 15px 0;
-          list-style-type: "- ";
-          padding: 0 15px;
-          li {
-            padding: 5px;
-          }
-        }
-      }
+  .collapsible {
+    background-color: $buttonColor;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $letterColor;
     }
+    &:after {
+      content: "\02C5";
+      color: white;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+  }
+
+  .active {
+    background-color: $letterColor;
+    border-radius: 15px 15px 0 0;
+
+    &:after {
+      content: "\02C4";
+    }
+  }
+
+  .content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba($color: $backgroundColor, $alpha: 0.5);
+    border-radius: 0 0 15px 15px;
   }
 }
 
@@ -147,7 +165,7 @@ header {
       }
     }
     .images-hover {
-      color: $testColor2;
+      color: $buttonColor;
       font-weight: bold;
       img {
         display: none;
@@ -195,14 +213,14 @@ header {
       max-width: 50px;
       border-radius: 5px;
       path {
-        fill: $testColor2;
+        fill: $buttonColor;
       }
     }
   }
 }
 
 .contact-section {
-  background-color: $testColor3;
+  background-color: $letterColor;
   padding: 100px 0;
 
   .contact-container {
