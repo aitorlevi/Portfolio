@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import github from "../assets/other/github.svg";
 import linkedin from "../assets/other/linkedin.svg";
-import menuIcon from "../assets/menu/menu.svg";
-import closeIcon from "../assets/menu/close.svg";
+import resume from "../assets/other/resume.svg";
+import mail from "../assets/other/mail.svg";
+import open from "../assets/other/open.svg";
+import copy from "../assets/other/copy.svg";
 import $ from "jquery";
 
 export const Header = () => {
@@ -14,6 +16,23 @@ export const Header = () => {
   const toggleMenu = () => {
     $(".menu-icon").toggleClass("open");
     $(".menu-content").toggleClass("active");
+  };
+
+  const copyMail = () => {
+    navigator.clipboard.writeText("aitorlevi@gmail.com");
+    $(".popup-mail").toggleClass("show");
+    const timer = setTimeout(() => {
+      $(".popup-mail").toggleClass("show");
+    }, 3000);
+    return () => clearTimeout(timer);
+  };
+
+  const openResume = () => {
+    alert("Open resume");
+  };
+
+  const goTo = (url) => {
+    window.open(url);
   };
 
   return (
@@ -59,17 +78,30 @@ export const Header = () => {
             </p>
           </div>
           <div className="social">
+            <div className="popup-mail">
+              <div className="modal">¡Mail copiado en el portapapeles!</div>
+            </div>
+            <p>Algunos detalles:</p>
             <ul>
-              <li>
+              <li onClick={() => goTo("https://github.com/aitorlevi")}>
                 <img src={github} />
+                <span>/aitorlevi</span>
               </li>
-              <li>
+              <li
+                onClick={() =>
+                  goTo("https://www.linkedin.com/in/aitor-ledesma/")
+                }
+              >
                 <img src={linkedin} />
+                <span>/aitor-ledesma</span>
               </li>
-              <li>
+
+              <li onClick={() => copyMail()}>
+                <img src={mail} />
                 <span>aitorlevi@gmail.com</span>
               </li>
-              <li>
+              <li onClick={() => openResume()}>
+                <img src={resume} />
                 <span>Resume</span>
               </li>
             </ul>

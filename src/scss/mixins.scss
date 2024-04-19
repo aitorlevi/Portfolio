@@ -1,25 +1,39 @@
-@mixin keyframes($gradient) {
-  @-webkit-keyframes #{$gradient} {
-    @content;
-  }
-  @keyframes #{$gradient} {
-    @content;
-  }
-}
-@mixin animation($str) {
-  -webkit-animation: #{$str};
-  animation: #{$str};
+@mixin animateGradient($animation, $duration, $method, $times) {
+  animation: $animation $duration $method $times;
 }
 
-@include keyframes(gradient) {
-  0% {
-    background-position: 0% 50%;
+@mixin animateFade($animationIn, $animationOut, $duration) {
+  animation: $animationIn, $animationOut $duration;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
   }
-  50% {
-    background-position: 100% 50%;
+  @keyframes #{$name} {
+    @content;
   }
-  100% {
-    background-position: 0% 50%;
+}
+
+@include keyframes(fadein) {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeout) {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
   }
 }
 

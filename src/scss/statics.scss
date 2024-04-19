@@ -20,7 +20,18 @@ body {
   background-color: $backgroundColor;
   background: linear-gradient(-45deg, #fff, $backgroundColor2);
   background-size: 1000%;
-  @include animation("gradient 15s ease infinite");
+  @include animateGradient(gradient, 15s, ease, infinite);
+  @include keyframes(gradient) {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 h1 {
