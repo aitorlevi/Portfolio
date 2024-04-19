@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import mir from "/images/about-me/mir.gif";
+import { DeviceWidthContext } from "../App";
+import $ from "jquery";
 
 export const AboutMe = () => {
+  const deviceWith = useContext(DeviceWidthContext);
   const years = 28;
 
   const showImage = (id, e) => {
-    console.log(e);
-    var img = document.getElementById(id);
-    img.style.top = e.clientY - 200 + "px";
-    img.style.left = e.clientX - 600 + "px";
+    if (window.screen.width < 480) {
+      $(`#${id}`).css("display", "block");
+    } else {
+      var img = document.getElementById(id);
+      img.style.top = e.clientY - 200 + "px";
+      img.style.left = e.clientX - 600 + "px";
+    }
   };
 
   // useEffect(() => {
@@ -22,6 +28,17 @@ export const AboutMe = () => {
   //     };
   //   });
   // });
+  const showImageMobile = (img, id) => {
+    return (
+      <div className="modal" id={id}>
+        <img src={img} className="mobileImg" />
+      </div>
+    );
+  };
+  const showImageDesktop = (img, id) => {
+    <img src={img} id={id} className="desktopImg" />;
+  };
+
   return (
     <>
       <section className="about-me-section" id="aboutMe">
@@ -36,7 +53,9 @@ export const AboutMe = () => {
                 onPointerEnter={(e) => showImage("mir", e)}
               >
                 Montcada i Reixac
-                <img src={mir} id="mir" />
+                {deviceWith < 480
+                  ? showImageMobile(mir, "mir")
+                  : showImageDesktop(mir, "mir")}
               </span>
               . Una pequeña ciudad de 35.000 habitantes dividida por ríos, vias
               del tren y autopistas.

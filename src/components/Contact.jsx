@@ -15,8 +15,18 @@ export const Contact = () => {
           </div>
 
           <form className="contact-form" method="post">
-            <input type="text" name="name" placeholder="Nombre"></input>
-            <input type="text" name="email" placeholder="Email"></input>
+            <input
+              type="text"
+              name="name"
+              placeholder="Nombre"
+              autoComplete="off"
+            ></input>
+            <input
+              type="text"
+              name="email"
+              placeholder="Email"
+              autoComplete="off"
+            ></input>
             <textarea name="message" placeholder="Mensaje"></textarea>
             <div className="submit-container">
               <input type="submit" value="Enviar" />

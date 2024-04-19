@@ -2,37 +2,76 @@
 @import "mixins";
 @import "statics";
 
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .menu-icon {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2;
+    background-image: url("../assets/menu/menu.svg");
+
+    &.open {
+      background-image: url("../assets/menu/close.svg");
+    }
+  }
+
+  ul {
+    @include flex(
+      column,
+      $justify-content: center,
+      $align-items: center,
+      $gap: 40px
+    );
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $primaryColor;
+    overflow-y: hidden;
+    transition: 0.5s;
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        padding: 10px 20px;
+        color: $fontColor;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+
+      a:hover {
+        background: $buttonColor;
+        font-size: 2.1rem;
+        transition: all 500ms;
+      }
+    }
+    &.active {
+      height: 100vh;
+    }
+  }
+}
+
 header {
   .header-container {
     @include container-section();
     @include flex(column, center, center, center, 40px);
     height: 100vh;
-    .navigation {
-      ul {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 0;
-        li {
-          list-style: none;
-          a {
-            text-decoration: none;
-            padding: 10px 20px;
-            color: $fontColor;
-            border-radius: 5px;
-            cursor: pointer;
-          }
 
-          a:hover {
-            background: $buttonColor;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: all 500ms;
-          }
-        }
-      }
-    }
     .social {
       ul {
         display: flex;
@@ -141,7 +180,7 @@ header {
     .images-hover {
       color: $buttonColor;
       font-weight: bold;
-      img {
+      .desktopImg {
         display: none;
         opacity: 0;
         max-width: 500px;
@@ -150,6 +189,25 @@ header {
         transition: all 500ms;
         border-radius: 15px;
         border: 1px solid black;
+      }
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        .mobileImg {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+        }
       }
     }
     .images-hover:hover {
@@ -176,7 +234,6 @@ header {
   list-style: none;
   padding: 0;
   li {
-    display: flex;
     @include flex($flex-flow: column, $align-items: center);
 
     font-weight: 500;
