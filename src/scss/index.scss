@@ -217,6 +217,9 @@ nav {
       transform: rotate(45deg);
       right: 29px;
     }
+    &:hover {
+      background-color: $mainColor;
+    }
   }
 
   .active {
@@ -252,10 +255,22 @@ nav {
   .about-me-container {
     @include flex(column);
 
-    img {
-      margin: 0 auto;
-      width: 70%;
-      border-radius: 15px;
+    .bio-img {
+      img {
+        margin: 0 auto;
+        width: 70%;
+        border-radius: 15px;
+      }
+    }
+    @include mediaQuery(M) {
+      flex-flow: row;
+      .bio-img {
+        float: right;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 }
@@ -286,6 +301,9 @@ nav {
       }
     }
   }
+  @include mediaQuery(M) {
+    justify-content: flex-start;
+  }
 }
 
 .contact-section {
@@ -294,15 +312,19 @@ nav {
   .contact-container {
     @include container-section;
     padding: 30px 0;
-    .contact-information {
-      margin-bottom: 20px;
-    }
+
     .contact-data {
       @include flex(column nowrap);
       margin-bottom: 50px;
+      .contact-information {
+        margin-bottom: 20px;
+      }
       .contact-form {
         width: 100%;
         @include flex($flex-flow: column);
+      }
+      @include mediaQuery(M) {
+        flex-flow: row;
       }
     }
   }

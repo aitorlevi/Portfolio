@@ -33,7 +33,9 @@ export const AboutMe = () => {
               bajo el agua!
             </p>
           </div>
-          <img src="../images/about-me/me.png" />
+          <div className="bio-img">
+            <img src="../images/about-me/me.png" />
+          </div>
         </div>
       </section>
     </>
