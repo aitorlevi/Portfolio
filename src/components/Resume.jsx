@@ -12,19 +12,16 @@ export const Resume = () => {
 
   return (
     <section className="resume-section" id="resume">
-      <h2>&lt;resume&gt;</h2>
+      <h2>resume</h2>
       {getCompanies().map((company, index) => {
         return (
           <article key={index} className="company">
-            <button
-              type="button"
-              className="collapsible"
-              onClick={(e) => showContent(e, index)}
-            >
+            <div className="collapsible" onClick={(e) => showContent(e, index)}>
               {company.title}
-            </button>
+
+              <span className="date">{company.date}</span>
+            </div>
             <div className="content" id={`content` + index}>
-              <p className="date">{company.date}</p>
               <p>{company.description}</p>
               <ul className="tasks">
                 {company.tasks.map((task, index) => {
@@ -40,7 +37,6 @@ export const Resume = () => {
           </article>
         );
       })}
-      <h2>&lt;/resume&gt;</h2>
     </section>
   );
 };

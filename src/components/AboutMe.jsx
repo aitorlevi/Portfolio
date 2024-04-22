@@ -1,64 +1,23 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import mir from "/images/about-me/mir.gif";
+import pc from "/images/about-me/pc-master-race.jpg";
 import { DeviceWidthContext } from "../App";
 import $ from "jquery";
 
 export const AboutMe = () => {
-  const deviceWith = useContext(DeviceWidthContext);
   const years = 28;
-
-  const showImage = (id, e) => {
-    if (window.screen.width < 480) {
-      $(`#${id}`).css("display", "block");
-    } else {
-      var img = document.getElementById(id);
-      img.style.top = e.clientY - 200 + "px";
-      img.style.left = e.clientX - 600 + "px";
-    }
-  };
-
-  // useEffect(() => {
-  //   const images = document.querySelectorAll(".images-hover");
-  //   images.forEach((img) => {
-  //     window.onmousemove = function (e) {
-  //       let x = e.clientX - 520 + "px",
-  //         y = e.clientY - 150 + "px";
-  //       img.style.top = y;
-  //       img.style.left = x;
-  //     };
-  //   });
-  // });
-  const showImageMobile = (img, id) => {
-    return (
-      <div className="modal" id={id}>
-        <img src={img} className="mobileImg" />
-      </div>
-    );
-  };
-  const showImageDesktop = (img, id) => {
-    <img src={img} id={id} className="desktopImg" />;
-  };
 
   return (
     <>
       <section className="about-me-section" id="aboutMe">
-        <h2>&lt;sobre mí&gt;</h2>
+        <h2>sobre mí</h2>
         <div className="about-me-container">
           <div className="bio">
             <p>
               Hola de nuevo! Soy Aitor y tengo {years} años. Nacido y criado en
               Barcelona, España ... bueno, no exactamente en Barcelona, en&nbsp;
-              <span
-                className="images-hover"
-                onPointerEnter={(e) => showImage("mir", e)}
-              >
-                Montcada i Reixac
-                {deviceWith < 480
-                  ? showImageMobile(mir, "mir")
-                  : showImageDesktop(mir, "mir")}
-              </span>
-              . Una pequeña ciudad de 35.000 habitantes dividida por ríos, vias
-              del tren y autopistas.
+              Montcada i Reixac. Una pequeña ciudad de 35.000 habitantes
+              dividida por ríos, vias del tren y autopistas.
             </p>
             <p>
               Graduado en los ciclos de grado superior ASIX (Administración de
@@ -70,18 +29,8 @@ export const AboutMe = () => {
             </p>
             <p>
               En mi tiempo libre, entre otras cosas me gusta jugar a&nbsp;
-              <span
-                className="images-hover"
-                onPointerEnter={(e) => showImage("pcMaster", e)}
-              >
-                videojuegos
-                <img
-                  src="../images/about-me/pc-master-race.jpg"
-                  id="pcMaster"
-                />
-              </span>
-              , hacer deporte y leer. ¡Mi lugar favorito es sumergido bajo el
-              agua!
+              videojuegos, hacer deporte y leer. ¡Mi lugar favorito es sumergido
+              bajo el agua!
             </p>
           </div>
           <img src="../images/about-me/me.png" />

@@ -5,9 +5,9 @@ import { AboutMe } from "./components/AboutMe";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Toolkit } from "./components/Toolkit";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
-export const DeviceWidthContext = createContext(window.innerWidth);
+export const DeviceWidthContext = createContext("");
 function App() {
   return (
     <DeviceWidthContext.Provider value={window.innerWidth}>

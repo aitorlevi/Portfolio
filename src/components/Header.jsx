@@ -65,12 +65,14 @@ export const Header = () => {
           <div className="presentation">
             <p>¡Hola! Soy</p>
             <h1>
-              Aitor <span className="red-color">Le</span>desma&nbsp;
-              <span className="red-color">Vi</span>llaitodo
+              Aitor <span className="brand-color">Le</span>desma&nbsp;
+              <span className="brand-color">Vi</span>llaitodo
             </h1>
             <p>
               Un apasionado&nbsp;
-              <span className="red-color">&lt;programador FrontEnd /&gt;</span>
+              <span className="brand-color">
+                &lt;programador FrontEnd /&gt;
+              </span>
               &nbsp; con más de 5 años de experiencia.
               <br />
               La idea de esta página es mostrarte de una manera simple y clara

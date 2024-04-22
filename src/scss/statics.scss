@@ -18,25 +18,27 @@ body {
   margin: 0px;
   color: $fontColor;
   background-color: $backgroundColor;
-  background: linear-gradient(-45deg, #fff, $backgroundColor2);
-  background-size: 1000%;
-  @include animateGradient(gradient, 15s, ease, infinite);
-  @include keyframes(gradient) {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+  // background-size: 1000%;
+  // @include animateGradient(gradient, 15s, ease, infinite);
+  // @include keyframes(gradient) {
+  //   0% {
+  //     background-position: 0% 50%;
+  //   }
+  //   50% {
+  //     background-position: 100% 50%;
+  //   }
+  //   100% {
+  //     background-position: 0% 50%;
+  //   }
+  // }
 }
 
 h1 {
   font-size: 8vw;
   margin: 20px 0;
+  @include mediaQuery(L) {
+    font-size: 4rem;
+  }
 }
 h2 {
   font-size: 1.5rem;
@@ -56,31 +58,21 @@ ul {
   margin: 1em 0;
 }
 
-.green-color {
-  color: $primaryColor;
-  font-weight: bold;
-}
-
-.red-color {
-  color: $letterColor;
-  font-weight: bold;
-}
-
-.orange-color {
-  color: $buttonColor;
+.brand-color {
+  color: $mainColor;
   font-weight: bold;
 }
 
 input[type="text"],
 textarea {
   border: none;
-  background-color: $backgroundColor2;
+  background-color: $backgroundColor;
   padding: 10px;
   border-radius: 5px;
+  color: $fontColor;
 
   &:focus {
-    outline: inset;
-    color: $buttonColor !important;
+    outline: none;
   }
 }
 
@@ -91,15 +83,16 @@ textarea {
 button,
 input[type="submit"],
 input[type="button"] {
-  border: 2px solid $buttonColor;
+  border: none;
   border-radius: 5px;
-  background-color: $buttonColor;
+  background-color: $darkAccentColor;
   padding: 10px 20px;
   font-size: 1rem;
   color: white;
   text-transform: uppercase;
+  transition: all 0.3s;
+
   &:hover {
-    background-color: $backgroundColor;
-    color: $buttonColor;
+    background-color: $mainColor;
   }
 }

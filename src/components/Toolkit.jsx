@@ -41,7 +41,7 @@ export const Toolkit = () => {
   ];
   return (
     <section className="toolkit-section">
-      <h2>&lt;herramientas que utilizo&gt;</h2>
+      <h2>herramientas que utilizo</h2>
       <p>Puedes ver un poco de las herramientas que uso para mi trabajo</p>
       <h3>Front End</h3>
       <div className="technologies-container">
@@ -51,9 +51,6 @@ export const Toolkit = () => {
       <Technologies technologies={backEndTech} />
       <h3>Diseño</h3>
       <Technologies technologies={designTech} />
-      {/* <h3>Otros</h3>
-      <Technologies technologies={otherTech} /> */}
-      <h2>&lt;/herramientas que utilizo&gt;</h2>
     </section>
   );
 };

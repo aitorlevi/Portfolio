@@ -1,13 +1,14 @@
 @import "variables";
 @import "mixins";
 @import "statics";
+@import "queries";
 
 nav {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 1;
 
   .menu-icon {
     position: absolute;
@@ -34,10 +35,9 @@ nav {
     height: 0;
     width: 100%;
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
-    background-color: $primaryColor;
+    background-color: $lightAccentColor;
     overflow-y: hidden;
     transition: 0.5s;
     margin: 0;
@@ -47,16 +47,16 @@ nav {
       a {
         text-decoration: none;
         padding: 10px 20px;
-        color: $fontColor;
         border-radius: 5px;
+        color: $fontColor;
         cursor: pointer;
         font-size: 2rem;
         font-weight: 600;
       }
 
       a:hover {
-        background: $buttonColor;
-        font-size: 2.1rem;
+        background: $backgroundColor;
+        font-size: 2.2rem;
         transition: all 500ms;
       }
     }
@@ -77,23 +77,34 @@ nav {
       flex-flow: column;
       justify-content: left;
       padding: 0;
-      gap: 20px;
+      gap: 5px 20px;
       li {
         list-style: none;
         display: flex;
         align-items: center;
         gap: 10px;
+        padding: 10px 20px;
+        border-radius: 16px;
         cursor: pointer;
+        transition: background-color 0.5s;
         img {
           width: 30px;
+          height: 30px;
         }
+        &:hover {
+          background-color: rgba($color: $whiteColor, $alpha: 0.7);
+        }
+      }
+      @include mediaQuery(L) {
+        flex-flow: row;
+        gap: 40px;
       }
     }
     .popup-mail {
       visibility: hidden;
       width: 85%;
       margin-left: -42.5%;
-      background-color: $primaryColor;
+      background-color: $mainColor;
       color: #fff;
       font-weight: 600;
       text-align: center;
@@ -106,9 +117,7 @@ nav {
       box-shadow: 10px 5px 5px $fontColor;
 
       &.show {
-        visibility: visible; /* Show the snackbar */
-        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-  However, delay the fade out process for 2.5 seconds */
+        visibility: visible;
         @include animateFade(fadein 0.5s, fadeout 0.5s, 2.5s);
         @include keyframes(fadein) {
           from {
@@ -136,11 +145,6 @@ nav {
   }
 }
 
-.home-section {
-  @include container-section();
-  height: 100vh;
-}
-
 .portfolio-section {
   @include container-section;
   .projects-container {
@@ -166,7 +170,7 @@ nav {
           display: flex;
           flex-flow: row wrap;
           opacity: 1;
-          background-color: ($secondaryColor + cc);
+          background-color: ($mainColor + cc);
         }
       }
     }
@@ -179,25 +183,51 @@ nav {
     text-align: left;
     width: 100%;
     transition: all 0.5s;
-    color: $backgroundColor;
+    color: $whiteColor;
+    position: relative;
+    font-size: 1.2rem;
+    padding: 10px 20px 25px;
+    background-color: $darkAccentColor;
+    border-radius: 5px;
 
-    &:hover {
-      background-color: $letterColor;
+    .date {
+      position: absolute;
+      left: 20px;
+      bottom: 10px;
+      font-size: 0.8rem;
+    }
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 3px;
+      background-color: $whiteColor;
+      border-radius: 10px;
+      top: 45%;
+      right: 20px;
+      transform-origin: center center;
+      transition: transform 0.2s;
+    }
+    &:before {
+      transform: rotate(-45deg);
     }
     &:after {
-      content: "\02C5";
-      font-weight: bold;
-      float: right;
-      margin-left: 5px;
+      transform: rotate(45deg);
+      right: 29px;
     }
   }
 
   .active {
-    background-color: $letterColor;
+    background-color: $mainColor;
     border-radius: 5px 5px 0 0;
 
+    &:before {
+      transform: rotate(45deg);
+    }
     &:after {
-      content: "\02C4";
+      transform: rotate(-45deg);
     }
   }
 
@@ -206,10 +236,13 @@ nav {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    background-color: rgba($color: $backgroundColor, $alpha: 0.5);
+    background-color: rgba($color: $whiteColor, $alpha: 0.5);
     border-radius: 0 0 5px 5px;
     .date {
       font-weight: bold;
+    }
+    li {
+      margin-bottom: 10px;
     }
   }
 }
@@ -224,47 +257,6 @@ nav {
       width: 70%;
       border-radius: 15px;
     }
-    .images-hover {
-      color: $buttonColor;
-      font-weight: bold;
-      .desktopImg {
-        display: none;
-        opacity: 0;
-        max-width: 500px;
-        height: auto;
-        overflow: hidden;
-        transition: all 500ms;
-        border-radius: 15px;
-        border: 1px solid black;
-      }
-      .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0, 0, 0); /* Fallback color */
-        background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-        .mobileImg {
-          margin: auto;
-          display: block;
-          width: 80%;
-          max-width: 700px;
-        }
-      }
-    }
-    .images-hover:hover {
-      img {
-        display: block;
-        position: fixed;
-        visibility: visible;
-        opacity: 1;
-      }
-    }
   }
 }
 
@@ -277,7 +269,7 @@ nav {
 }
 
 .technologies {
-  @include flex($flex-flow: row wrap, $justify-content: space-around);
+  @include flex($flex-flow: row wrap, $justify-content: center);
   list-style: none;
   padding: 0;
   li {
@@ -286,17 +278,18 @@ nav {
     font-weight: 500;
     width: 80px;
     img {
-      width: 40px;
+      width: 35px;
+      height: 35px;
       border-radius: 5px;
       path {
-        fill: $buttonColor;
+        fill: $lightAccentColor;
       }
     }
   }
 }
 
 .contact-section {
-  background-color: $letterColor;
+  background-color: $contactBackgroundColor;
 
   .contact-container {
     @include container-section;
@@ -319,29 +312,9 @@ Footer {
   position: relative;
   bottom: 0;
   width: 100%;
-  background-color: $primaryColor;
+  background-color: $mainColor;
   color: white;
   border: 0;
   display: block;
   padding: 15px;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
 }

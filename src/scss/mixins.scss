@@ -57,3 +57,21 @@
   align-content: $align-content;
   gap: $gap;
 }
+
+@mixin mediaQuery($breakpoint) {
+  @if $breakpoint == M {
+    @media (min-width: 780px) {
+      @content;
+    }
+  }
+  @if $breakpoint == M-L {
+    @media (max-width: 990px) and (min-width: 780px) {
+      @content;
+    }
+  }
+  @if $breakpoint == L {
+    @media (min-width: 992px) {
+      @content;
+    }
+  }
+}
