@@ -6,11 +6,23 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Toolkit } from "./components/Toolkit";
 import { createContext, useEffect, useState } from "react";
+import $ from "jquery";
 
-export const DeviceWidthContext = createContext("");
+export const CurrentLanguageContext = createContext(null);
 function App() {
+  const [currentLanguage, setCurrentLanguage] = useState("en");
+  const toggleLanguage = () => {
+    setCurrentLanguage((currentLanguage) =>
+      currentLanguage === "en" ? "es" : "en"
+    );
+    $(".menu-icon").toggleClass("open");
+    $(".menu-container").toggleClass("active");
+  };
+
   return (
-    <DeviceWidthContext.Provider value={window.innerWidth}>
+    <CurrentLanguageContext.Provider
+      value={{ currentLanguage, toggleLanguage }}
+    >
       <Header />
       <Portfolio />
       <Resume />
@@ -18,7 +30,7 @@ function App() {
       <Toolkit />
       <Contact />
       <Footer />
-    </DeviceWidthContext.Provider>
+    </CurrentLanguageContext.Provider>
   );
 }
 

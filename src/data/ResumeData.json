@@ -1,0 +1,70 @@
+{
+  "en": {
+    "title": "Resume",
+    "companies": [
+      {
+        "title": "Ogilvy One",
+        "location": "Barcelona, Spain",
+        "date": "2020 - 2024",
+        "description": "Advertising and marketing agency",
+        "tasks": [
+          {
+            "title": "Banner and Mailing Campaigns",
+            "description": "Creating eye-catching banners and emails for client brands, making them look good and work on most browsers and devices."
+          },
+          {
+            "title": "Web Content Management",
+            "description": "Management and updating of the contents of the website through content management systems (CMS), ensuring the correct visualisation from different browsers."
+          },
+          {
+            "title": "Adobe Experience Manager (AEM)",
+            "description": "Used Adobe Experience Manager to manage and notify employees of banners through mobile applications, ensuring that users had a seamless experience and that content updates were efficient."
+          },
+          {
+            "title": "MOOCA Platform",
+            "description": "Development and management of landing page campaigns for applications using the MOOCA platform, I made pages that attracted users and increased conversion rates."
+          }
+        ],
+        "technologies": [
+          { "img": "html", "name": "HTML5" },
+          { "img": "css", "name": "CSS3" },
+          { "img": "js", "name": "JavaScript" }
+        ]
+      }
+    ]
+  },
+  "es": {
+    "title": "Currículum",
+    "companies": [
+      {
+        "title": "Ogilvy One",
+        "location": "Barcelona, Spain",
+        "date": "2020 - 2024",
+        "description": "Agencia de publicidad y marketing",
+        "tasks": [
+          {
+            "title": "Campañas de banners y correos electrónicos",
+            "description": "Creación de banners llamativos y correos electrónicos para la marcas clientes, haciendo que tuvieran buen aspecto y funcionaran en la mayoria de navegadores y dispositivos."
+          },
+          {
+            "title": "Gestión de contenidos web",
+            "description": "Gestión y actualización de contenidos web mediante sistemas de gestión de contenidos (CMS), asegurandome de que la correcta visualizacion desde diferentes navegadores."
+          },
+          {
+            "title": "Adobe Experience Manager (AEM)",
+            "description": "Uso de Adobe Experience Manager para gestionar y notificar a los empleados las pancartas a través de aplicaciones móviles, garantizando que los usuarios tuvieran una experiencia fluida y que las actualizaciones de contenido fueran eficientes."
+          },
+          {
+            "title": "MOOCA Platform",
+            "description": "Desarrollo y gestión de campañas de landing pages para aplicaciones que utilizan la plataforma MOOCA, realicé páginas que atraían a los usuarios y aumentaban las tasas de conversión."
+          }
+        ],
+        "technologies": [
+          { "img": "../assets/frontEnd/html.svg", "name": "HTML5" },
+          { "img": "../assets/frontEnd/html.svg", "name": "CSS3" },
+          { "img": "../assets/frontEnd/html.svg", "name": "JavaScript" }
+        ]
+      }
+    ]
+  }
+}

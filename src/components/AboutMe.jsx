@@ -1,8 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import mir from "/images/about-me/mir.gif";
-import pc from "/images/about-me/pc-master-race.jpg";
-import { DeviceWidthContext } from "../App";
-import $ from "jquery";
 
 export const AboutMe = () => {
   const years = 28;

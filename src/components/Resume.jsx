@@ -1,7 +1,20 @@
-import { getCompanies } from "../data/ResumeData";
+import { useContext, useEffect, useState } from "react";
+import { CurrentLanguageContext } from "../App";
+import dataJSON from "../data/ResumeData.json";
 import { Technologies } from "./Technologies";
 
 export const Resume = () => {
+  const languageContext = useContext(CurrentLanguageContext);
+  const [data, setData] = useState(dataJSON.en);
+
+  useEffect(() => {
+    setData(dataJSON[languageContext.currentLanguage]);
+  }, []);
+
+  useEffect(() => {
+    setData(dataJSON[languageContext.currentLanguage]);
+  }, [languageContext.currentLanguage]);
+
   const showContent = (button, index) => {
     button.target.classList.toggle("active");
     var content = document.getElementById("content" + index);
@@ -12,8 +25,8 @@ export const Resume = () => {
 
   return (
     <section className="resume-section" id="resume">
-      <h2>resume</h2>
-      {getCompanies().map((company, index) => {
+      <h2>{data.title}</h2>
+      {data.companies.map((company, index) => {
         return (
           <article key={index} className="company">
             <div className="collapsible" onClick={(e) => showContent(e, index)}>
@@ -27,7 +40,7 @@ export const Resume = () => {
                 {company.tasks.map((task, index) => {
                   return (
                     <li key={index}>
-                      <b>{task[0]}</b>: {task[1]}
+                      <b>{task.title}</b>: {task.description}
                     </li>
                   );
                 })}

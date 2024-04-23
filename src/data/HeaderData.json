@@ -1,0 +1,28 @@
+{
+  "en": {
+    "hi": "HI! I'm",
+    "passionate": "A passionate",
+    "developer": "FrontEnd Developer",
+    "experience": "With more than 5 years of experience.",
+    "copyMail": "Mail copied to clipboard!",
+    "menu": {
+      "resume": "Resume",
+      "projects": "Projects",
+      "aboutMe": "About me",
+      "contact": "Contact"
+    }
+  },
+  "es": {
+    "hi": "¡Hola! Soy",
+    "passionate": "Un apasionado",
+    "developer": "Desarrollador FronEnd",
+    "experience": "con más de 5 años de experiencia.",
+    "copyMail": "¡Mail copiado en portapapeles!",
+    "menu": {
+      "resume": "Currículum",
+      "projects": "Proyectos",
+      "aboutMe": "Sobre mí",
+      "contact": "Contacto"
+    }
+  }
+}
