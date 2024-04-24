@@ -3,6 +3,45 @@
 @import "statics";
 @import "queries";
 
+#loadingScreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 0;
+  transition: height 0.2s ease-out;
+  @include flex($align-items: center, $justify-content: center);
+  background-color: rgba($color: $whiteColor, $alpha: 1);
+  z-index: 100;
+
+  .loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, $mainColor 94%, #0000) top/8px
+        8px no-repeat,
+      conic-gradient(#0000 30%, $mainColor);
+    mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 8px),
+      #000 0
+    );
+    animation: l13 1s infinite linear;
+  }
+  @keyframes l13 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+
+  &.active {
+    height: 100vh;
+  }
+}
+
 nav {
   position: fixed;
   width: 100%;
@@ -215,8 +254,6 @@ nav {
     }
     &.active {
       transform: translateY(0);
-      .language-container {
-      }
     }
   }
 }
@@ -342,73 +379,88 @@ nav {
 
 .resume-section {
   @include container-section;
-  .collapsible {
-    text-align: left;
-    width: 100%;
-    transition: all 0.5s;
-    color: $whiteColor;
-    position: relative;
-    font-size: 1.5rem;
-    padding: 10px 20px 25px;
-    background-color: $darkAccentColor;
-    border-radius: 5px;
+  .company {
+    margin-bottom: 30px;
 
-    .date {
-      position: absolute;
-      left: 20px;
-      bottom: 10px;
-      font-size: 0.8rem;
+    .collapsible {
+      text-align: left;
+      width: 100%;
+      transition: all 0.5s;
+      color: $whiteColor;
+      position: relative;
+      font-size: 1.5rem;
+      padding: 10px 40px 25px 20px;
+      background-color: $darkAccentColor;
+      border-radius: 5px;
+
+      .location {
+        display: block;
+        font-size: 1rem;
+        // @include mediaQuery(M) {
+        //   display: contents;
+        //   &:before {
+        //     content: "| ";
+        //     font-size: 1.5rem;
+        //   }
+        // }
+      }
+      .date {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        font-size: 0.8rem;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 3px;
+        background-color: $whiteColor;
+        border-radius: 10px;
+        top: 45%;
+        right: 20px;
+        transform-origin: center center;
+        transition: transform 0.2s;
+      }
+      &:before {
+        transform: rotate(-45deg);
+      }
+      &:after {
+        transform: rotate(45deg);
+        right: 29px;
+      }
+      &:hover {
+        background-color: $mainColor;
+      }
+      &.active {
+        background-color: $mainColor;
+        border-radius: 5px 5px 0 0;
+
+        &:before {
+          transform: rotate(45deg);
+        }
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
     }
 
-    &:before,
-    &:after {
-      position: absolute;
-      content: "";
-      width: 15px;
-      height: 3px;
-      background-color: $whiteColor;
-      border-radius: 10px;
-      top: 45%;
-      right: 20px;
-      transform-origin: center center;
-      transition: transform 0.2s;
-    }
-    &:before {
-      transform: rotate(-45deg);
-    }
-    &:after {
-      transform: rotate(45deg);
-      right: 29px;
-    }
-    &:hover {
-      background-color: $mainColor;
-    }
-  }
-
-  .active {
-    background-color: $mainColor;
-    border-radius: 5px 5px 0 0;
-
-    &:before {
-      transform: rotate(45deg);
-    }
-    &:after {
-      transform: rotate(-45deg);
-    }
-  }
-
-  .content {
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background-color: rgba($color: $whiteColor, $alpha: 0.5);
-    border-radius: 0 0 5px 5px;
-    .date {
-      font-weight: bold;
-    }
-    li {
-      margin-bottom: 10px;
+    .content {
+      display: none;
+      padding: 0 20px;
+      max-height: fit-content;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: rgba($color: $whiteColor, $alpha: 0.5);
+      border-radius: 0 0 5px 5px;
+      .date {
+        font-weight: bold;
+      }
+      li {
+        margin-bottom: 10px;
+      }
     }
   }
 }
@@ -456,7 +508,7 @@ nav {
     @include flex($flex-flow: column, $align-items: center);
 
     font-weight: 500;
-    width: 80px;
+    width: fit-content;
     img {
       width: 35px;
       height: 35px;

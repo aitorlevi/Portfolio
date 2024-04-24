@@ -5,7 +5,7 @@
       {
         "title": "Ogilvy One",
         "location": "Barcelona, Spain",
-        "date": "2020 - 2024",
+        "date": "2016 - 2019",
         "description": "Advertising and marketing agency",
         "tasks": [
           {
@@ -25,11 +25,54 @@
             "description": "Development and management of landing page campaigns for applications using the MOOCA platform, I made pages that attracted users and increased conversion rates."
           }
         ],
-        "technologies": [
-          { "img": "html", "name": "HTML5" },
-          { "img": "css", "name": "CSS3" },
-          { "img": "js", "name": "JavaScript" }
-        ]
+        "technologies": ["html", "css", "js"]
+      },
+      {
+        "title": "Avanttic Consulting",
+        "location": "Barcelona, Spain",
+        "date": "2019 - 2021",
+        "description": "Technology consultancy specialising entirely in Oracle technology.",
+        "tasks": [
+          {
+            "title": "CRM Migration",
+            "description": "Migration of a popular pet food brand on Oracle Cloud. Made sure the switch was smooth and improved how the pages looked, resulting in improved performance and streamlined processes. Also, added new features to make users experiences better."
+          },
+          {
+            "title": "Legal Website Project",
+            "description": "Developed a website for a law firm that met all legal requirements, ensuring the protection of personal data documents and fostering trust among users. Ensured the site followed all legal rules and gave users an easy experience."
+          },
+          {
+            "title": "Ecommerce Mobile App",
+            "description": "Maintenance and development of new features to a shopping app on Android and iOS. Worked closely with different teams to make sure everything connected well and worked perfectly."
+          }
+        ],
+        "technologies": ["html", "scss", "js", "jquery", "node"]
+      },
+      {
+        "title": "CGI",
+        "location": "Barcelona, Spain",
+        "date": "2021 - 2023",
+        "description": "Technology and business consultancy",
+        "descriptionRole": "My role revolved around the development and maintenance of responsive web applications for a prominent Dutch business insurance company. My responsibilities included:",
+        "tasks": [
+          {
+            "title": "Web Development",
+            "description": "Development and maintenance of a responsive web application using Oracle JET. Ensured that the application offered an optimal user experience and adhered to industry best practices."
+          },
+          {
+            "title": "Unit Testing and Debugging",
+            "description": "Conducted thorough unit testing and debugging processes, identifying and resolving issues to ensure the seamless functionality of the web application. This meticulous approach was instrumental in maintaining high user satisfaction."
+          },
+          {
+            "title": "Improving Performance",
+            "description": "Made the app faster by improving certain processes, making pages load quicker. This change increased how much users liked the app."
+          },
+          {
+            "title": "Cross-Functional Collaboration",
+            "description": "Collaborated closely with cross-functional teams, including back-end developers, project managers, and designers, to design and implement custom screens using Agile methodology."
+          }
+        ],
+        "technologies": ["html", "scss", "js", "ts"]
       }
     ]
   },
@@ -38,8 +81,8 @@
     "companies": [
       {
         "title": "Ogilvy One",
-        "location": "Barcelona, Spain",
-        "date": "2020 - 2024",
+        "location": "Barcelona, España",
+        "date": "2016 - 2019",
         "description": "Agencia de publicidad y marketing",
         "tasks": [
           {
@@ -59,11 +102,54 @@
             "description": "Desarrollo y gestión de campañas de landing pages para aplicaciones que utilizan la plataforma MOOCA, realicé páginas que atraían a los usuarios y aumentaban las tasas de conversión."
           }
         ],
-        "technologies": [
-          { "img": "../assets/frontEnd/html.svg", "name": "HTML5" },
-          { "img": "../assets/frontEnd/html.svg", "name": "CSS3" },
-          { "img": "../assets/frontEnd/html.svg", "name": "JavaScript" }
-        ]
+        "technologies": ["html", "css", "js"]
+      },
+      {
+        "title": "Avanttic Consulting",
+        "location": "Barcelona, España",
+        "date": "2019 - 2021",
+        "description": "Consultora tecnológica especializada íntegramente en la tecnología de Oracle",
+        "tasks": [
+          {
+            "title": "Migración CRM",
+            "description": "Migración de una popular marca de comida para mascotas a Oracle Cloud. Me aseguré de que el cambio se realizara sin problemas y mejoré el aspecto de las páginas, lo que mejoró el rendimiento y agilizó los procesos. Además, se añadieron nuevas funciones para mejorar la experiencia de los usuarios."
+          },
+          {
+            "title": "Sitio web jurídico",
+            "description": "Desarrollamos un sitio web para un bufete de abogados que cumplía todos los requisitos legales, garantizaba la protección de los documentos de datos personales y fomentaba la confianza entre los usuarios. Nos aseguramos de que el sitio cumpliera todas las normas legales y ofreciera a los usuarios una experiencia sencilla."
+          },
+          {
+            "title": "Aplicación móvil eccomerce",
+            "description": "Mantenimiento y desarrollo nuevas características en una aplicación de compras en Android e iOS. Trabajé en estrecha colaboración con diferentes equipos para asegurarme de que todo se conectaba bien y funcionaba a la perfección."
+          }
+        ],
+        "technologies": ["html", "scss", "js", "jquery", "node"]
+      },
+      {
+        "title": "CGI",
+        "location": "Barcelona, España",
+        "date": "2021 - 2023",
+        "description": "Consultora tecnológica y de negocios.",
+        "descriptionRole": "Mi papel giraba en torno al desarrollo y mantenimiento de aplicaciones web responsivas para una importante compañía de seguros holandesa. Mis responsabilidades incluían:",
+        "tasks": [
+          {
+            "title": "Desarrollo web",
+            "description": "Desarrollo y mantenimiento de una aplicación web responsive utilizando Oracle JET. Garantizando que la aplicación ofreciera una experiencia de usuario óptima y se adhiriera a las mejores prácticas de la industria."
+          },
+          {
+            "title": "Pruebas unitarias y depuración",
+            "description": "Llevar a cabo exhaustivas pruebas unitarias y procesos de depuración, identificando y resolviendo problemas para garantizar la funcionalidad sin fisuras de la aplicación web. Este meticuloso enfoque fue fundamental para mantener una alta satisfacción de los usuarios."
+          },
+          {
+            "title": "Mejora del rendimiento",
+            "description": "Hacer la app más rápida mejorando ciertos procesos, haciendo que las páginas se cargaran más rápido."
+          },
+          {
+            "title": "Colaboración interfuncional",
+            "description": "Colaboré estrechamente con diferentes equipos, incluidos desarrolladores de back-end, gestores de proyectos y diseñadores, para diseñar e implementar pantallas personalizadas utilizando la metodología Agile."
+          }
+        ],
+        "technologies": ["html", "scss", "js", "ts"]
       }
     ]
   }

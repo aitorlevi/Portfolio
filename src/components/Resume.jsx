@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { CurrentLanguageContext } from "../App";
 import dataJSON from "../data/ResumeData.json";
 import { Technologies } from "./Technologies";
+import $ from "jquery";
 
 export const Resume = () => {
   const languageContext = useContext(CurrentLanguageContext);
@@ -15,12 +16,9 @@ export const Resume = () => {
     setData(dataJSON[languageContext.currentLanguage]);
   }, [languageContext.currentLanguage]);
 
-  const showContent = (button, index) => {
-    button.target.classList.toggle("active");
-    var content = document.getElementById("content" + index);
-    content.style.maxHeight
-      ? (content.style.maxHeight = null)
-      : (content.style.maxHeight = content.scrollHeight + "px");
+  const toggleContent = (index) => {
+    $(`#collapsible${index}`).toggleClass("active");
+    $(`#content${index}`).slideToggle("slow");
   };
 
   return (
@@ -29,13 +27,19 @@ export const Resume = () => {
       {data.companies.map((company, index) => {
         return (
           <article key={index} className="company">
-            <div className="collapsible" onClick={(e) => showContent(e, index)}>
+            <div
+              className="collapsible"
+              id={`collapsible${index}`}
+              onClick={() => toggleContent(index)}
+            >
               {company.title}
-
-              <span className="date">{company.date}</span>
+              <br />
+              <span className="location">{company.location}</span>
+              <span className="date">{company.date} </span>
             </div>
-            <div className="content" id={`content` + index}>
+            <div className="content" id={`content${index}`}>
               <p>{company.description}</p>
+              <p>{company.descriptionRole}</p>
               <ul className="tasks">
                 {company.tasks.map((task, index) => {
                   return (

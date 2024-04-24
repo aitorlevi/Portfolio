@@ -1,0 +1,28 @@
+{
+  "en": {
+    "title": "Contact",
+    "text": [
+      "If you want to contact me or chat you can find me on these social networks, or send me a message here!",
+      "Thank you very much!"
+    ],
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send"
+    }
+  },
+  "es": {
+    "title": "Contacto",
+    "text": [
+      "¡Si quieres contactar conmigo o charlar puedes encontrarme en estas redes sociales, o enviarme un mensaje aquí!",
+      "¡Muchas gracias!"
+    ],
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "submit": "Enviar"
+    }
+  }
+}

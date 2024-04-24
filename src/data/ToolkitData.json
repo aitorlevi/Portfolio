@@ -1,0 +1,32 @@
+{
+  "en": {
+    "title": "My toolkit",
+    "frontEnd": {
+      "title": "FrontEnd",
+      "techs": ["html", "css", "js", "jquery", "scss", "ts", "react"]
+    },
+    "backEnd": {
+      "title": "BackEnd",
+      "techs": ["node", "mongo", "firebase"]
+    },
+    "design": {
+      "title": "Design",
+      "techs": ["ps", "figma"]
+    }
+  },
+  "es": {
+    "title": "Mis herramientas",
+    "frontEnd": {
+      "title": "FrontEnd",
+      "techs": ["html", "css", "js", "jquery", "scss", "ts", "react"]
+    },
+    "backEnd": {
+      "title": "BackEnd",
+      "techs": ["node", "mongo", "firebase"]
+    },
+    "design": {
+      "title": "Diseño",
+      "techs": ["ps", "figma"]
+    }
+  }
+}

@@ -12,11 +12,19 @@ export const CurrentLanguageContext = createContext(null);
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
   const toggleLanguage = () => {
+    loadingScreen();
     setCurrentLanguage((currentLanguage) =>
       currentLanguage === "en" ? "es" : "en"
     );
     $(".menu-icon").toggleClass("open");
     $(".menu-container").toggleClass("active");
+    setTimeout(() => {
+      loadingScreen();
+    }, 2000);
+  };
+
+  const loadingScreen = () => {
+    $("#loadingScreen").toggleClass("active");
   };
 
   return (
@@ -30,6 +38,9 @@ function App() {
       <Toolkit />
       <Contact />
       <Footer />
+      <div id="loadingScreen">
+        <div className="loader"></div>
+      </div>
     </CurrentLanguageContext.Provider>
   );
 }

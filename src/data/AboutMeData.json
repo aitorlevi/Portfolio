@@ -1,0 +1,18 @@
+{
+  "en": {
+    "title": "About me",
+    "text": [
+      "Hello again! I'm Aitor and I'm 28 years old. Born and raised in Barcelona, Spain ... well, not exactly in Barcelona, but in Montcada i Reixac. A small town of 35.000 inhabitants divided by rivers, train tracks and motorways.",
+      "Graduated in ASIX (Systems and Network Administration or ASIR) and DAM (Multiplatform Applications Development) at INS La Ferreria. I am currently studying Computer Engineering at the UOC.",
+      "In my free time, among other things I like to play videogames, do sports and read, my favourite place is underwater!"
+    ]
+  },
+  "es": {
+    "title": "Sobre mí",
+    "text": [
+      "¡Hola de nuevo! Soy Aitor y tengo 28 años. Nacido y criado en Barcelona, España... bueno, no exactamente en Barcelona, sino en Montcada i Reixac. Una pequeña ciudad de 35.000 habitantes dividida por ríos, vías de tren y autopistas.",
+      "Graduado en los ciclos de grado superior ASIX (Administración de Sistemas y Redes o ASIR) y DAM (Desarrollo de Aplicaciones Multiplataforma) en el INS La Ferreria. Actualmente estudio Ingeniería Informática en la UOC.",
+      "En mi tiempo libre, entre otras cosas me gusta jugar a videojuegos, hacer deporte y leer, ¡mi lugar favorito es bajo el agua!"
+    ]
+  }
+}
