@@ -14,18 +14,30 @@ export const Contact = () => {
     setData(dataJSON[languageContext.currentLanguage]);
   }, [languageContext.currentLanguage]);
 
+  const sendMessage = (e) => {
+    e.preventDefault;
+    console.log(
+      "NAME:",
+      e.get("name"),
+      "\nEMAIL:",
+      e.get("email"),
+      "\nMESSAGE:",
+      e.get("message")
+    );
+  };
+
   return (
     <section className="contact-section" id="contact">
       <div className="contact-container">
         <h2>{data.title}</h2>
         <div className="contact-data">
           <div className="contact-information">
-            {data.text.map((paragraph) => {
-              return <p>{paragraph}</p>;
+            {data.text.map((paragraph, index) => {
+              return <p key={index}>{paragraph}</p>;
             })}
           </div>
 
-          <form className="contact-form" method="post">
+          <form action={sendMessage} className="contact-form">
             <input
               type="text"
               name="name"
@@ -40,7 +52,7 @@ export const Contact = () => {
             ></input>
             <textarea name="message" placeholder={data.form.message}></textarea>
             <div className="submit-container">
-              <input type="submit" value={data.form.submit} />
+              <button type="submit">{data.form.submit}</button>
             </div>
           </form>
         </div>

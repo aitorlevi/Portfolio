@@ -20,8 +20,8 @@ export const AboutMe = () => {
         <h2>{data.title}</h2>
         <div className="about-me-container">
           <div className="bio">
-            {data.text.map((paragraph) => {
-              return <p>{paragraph}</p>;
+            {data.text.map((paragraph, index) => {
+              return <p key={index}>{paragraph}</p>;
             })}
           </div>
           <div className="bio-img">
