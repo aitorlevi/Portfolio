@@ -35,7 +35,11 @@ export const Resume = () => {
               {company.title}
               <br />
               <span className="location">{company.location}</span>
-              <span className="date">{company.date} </span>
+              <span className="date">
+                <time dateTime={company.date.start}>{company.date.start}</time>
+                &nbsp;&#45;&nbsp;
+                <time dateTime={company.date.end}>{company.date.end}</time>
+              </span>
             </div>
             <div className="content" id={`content${index}`}>
               <p>{company.description}</p>
@@ -49,7 +53,9 @@ export const Resume = () => {
                   );
                 })}
               </ul>
-              <Technologies technologies={company.technologies} />
+              <div className="technologies-container">
+                <Technologies technologies={company.technologies} />
+              </div>
             </div>
           </article>
         );

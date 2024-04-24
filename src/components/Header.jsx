@@ -4,6 +4,7 @@ import linkedin from "../assets/other/linkedin.svg";
 import resume from "../assets/other/resume.svg";
 import mail from "../assets/other/mail.svg";
 import dataJSON from "../data/HeaderData.json";
+import resumePDF from "../../public/documents/Resume_Aitor_Ledesma.pdf";
 import $ from "jquery";
 import { CurrentLanguageContext } from "../App";
 
@@ -36,14 +37,6 @@ export const Header = () => {
       $(".popup-container").removeClass("show");
     }, 3000);
     return () => clearTimeout(timer);
-  };
-
-  const openResume = () => {
-    alert("Open resume");
-  };
-
-  const goTo = (url) => {
-    window.open(url);
   };
 
   return (
@@ -107,16 +100,15 @@ export const Header = () => {
 
             <ul className="details">
               <li>
-                <a onClick={() => goTo("https://github.com/aitorlevi")}>
+                <a href="https://github.com/aitorlevi" target="_blank">
                   <img src={github} />
                   <span>/aitorlevi</span>
                 </a>
               </li>
               <li>
                 <a
-                  onClick={() =>
-                    goTo("https://www.linkedin.com/in/aitor-ledesma/")
-                  }
+                  href="https://www.linkedin.com/in/aitor-ledesma/"
+                  target="_blank"
                 >
                   <img src={linkedin} />
                   <span>/aitor-ledesma</span>
@@ -130,7 +122,7 @@ export const Header = () => {
                 </a>
               </li>
               <li>
-                <a onClick={() => openResume()}>
+                <a href={resumePDF} target="_blank" rel="noopener noreferrer">
                   <img src={resume} />
                   <span>{data.menu.resume}</span>
                 </a>

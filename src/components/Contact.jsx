@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import dataJSON from "../data/ContactData.json";
 import { CurrentLanguageContext } from "../App";
+import github from "../assets/other/github.svg";
+import linkedin from "../assets/other/linkedin.svg";
 
 export const Contact = () => {
   const languageContext = useContext(CurrentLanguageContext);
@@ -30,14 +32,29 @@ export const Contact = () => {
     <section className="contact-section" id="contact">
       <div className="contact-container">
         <h2>{data.title}</h2>
-        <div className="contact-data">
-          <div className="contact-information">
+        <div className="data">
+          <div className="info">
             {data.text.map((paragraph, index) => {
               return <p key={index}>{paragraph}</p>;
             })}
+            <ul className="social">
+              <li>
+                <a href="https://github.com/aitorlevi" target="_blank">
+                  <img src={github} />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/aitor-ledesma/"
+                  target="_blank"
+                >
+                  <img src={linkedin} />
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <form action={sendMessage} className="contact-form">
+          <form action={sendMessage} className="form">
             <input
               type="text"
               name="name"
