@@ -24,15 +24,15 @@ export const Technologies = ({ technologies }) => {
       case "jquery":
         return { img: jquery, name: "jQuery" };
       case "scss":
-        return { img: scss, name: "SCSS" };
+        return { img: scss, name: "Sass" };
       case "ts":
         return { img: ts, name: "TypeScript" };
       case "react":
         return { img: react, name: "React" };
       case "node":
-        return { img: node, name: "Node JS" };
+        return { img: node, name: "Node.js" };
       case "mongo":
-        return { img: mongo, name: "Mongo DB" };
+        return { img: mongo, name: "MongoDB" };
       case "firebase":
         return { img: firebase, name: "Firebase" };
       case "ps":

@@ -9,7 +9,8 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "submit": "Send"
+      "submit": "Send",
+      "messageSent": "Message sent! I'll get back to you as quickly as possible!"
     }
   },
   "es": {
@@ -22,7 +23,8 @@
       "name": "Nombre",
       "email": "Email",
       "message": "Mensaje",
-      "submit": "Enviar"
+      "submit": "Enviar",
+      "messageSent": "¡Mensaje enviado! ¡Té responderé lo mas rápido posible!"
     }
   }
 }

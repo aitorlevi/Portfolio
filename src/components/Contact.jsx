@@ -1,12 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import dataJSON from "../data/ContactData.json";
 import { CurrentLanguageContext } from "../App";
+import { NotifiactionContext } from "../App";
 import github from "../assets/other/github.svg";
 import linkedin from "../assets/other/linkedin.svg";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
   const languageContext = useContext(CurrentLanguageContext);
+  const notificationContext = useContext(NotifiactionContext);
   const [data, setData] = useState(dataJSON.en);
+  const form = useRef();
 
   useEffect(() => {
     setData(dataJSON[languageContext.currentLanguage]);
@@ -16,16 +20,22 @@ export const Contact = () => {
     setData(dataJSON[languageContext.currentLanguage]);
   }, [languageContext.currentLanguage]);
 
-  const sendMessage = (e) => {
-    e.preventDefault;
-    console.log(
-      "NAME:",
-      e.get("name"),
-      "\nEMAIL:",
-      e.get("email"),
-      "\nMESSAGE:",
-      e.get("message")
-    );
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm("service_i4lhr9k", "template_2fgp6e4", form.current, {
+        publicKey: "g9wYisThgHuwKMggl",
+      })
+      .then(
+        () => {
+          notificationContext.setNotificationText(data.form.messageSent);
+          notificationContext.showNotification();
+        },
+        (error) => {
+          notificationContext.setNotificationText(error.text);
+          notificationContext.showNotification();
+        }
+      );
   };
 
   return (
@@ -54,22 +64,28 @@ export const Contact = () => {
             </ul>
           </div>
 
-          <form action={sendMessage} className="form">
+          <form ref={form} onSubmit={sendEmail} className="form">
             <input
               type="text"
               name="name"
               placeholder={data.form.name}
               autoComplete="off"
+              required
             ></input>
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder={data.form.email}
               autoComplete="off"
+              required
             ></input>
-            <textarea name="message" placeholder={data.form.message}></textarea>
+            <textarea
+              name="message"
+              placeholder={data.form.message}
+              required
+            ></textarea>
             <div className="submit-container">
-              <button type="submit">{data.form.submit}</button>
+              <input type="submit" value={data.form.submit} />
             </div>
           </form>
         </div>

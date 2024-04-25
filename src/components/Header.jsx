@@ -4,12 +4,14 @@ import linkedin from "../assets/other/linkedin.svg";
 import resume from "../assets/other/resume.svg";
 import mail from "../assets/other/mail.svg";
 import dataJSON from "../data/HeaderData.json";
-import resumePDF from "../../public/documents/Resume_Aitor_Ledesma.pdf";
+import resumePDF from "../documents/Resume_Aitor_Ledesma.pdf";
 import $ from "jquery";
 import { CurrentLanguageContext } from "../App";
+import { NotifiactionContext } from "../App";
 
 export const Header = () => {
   const languageContext = useContext(CurrentLanguageContext);
+  const notificationContext = useContext(NotifiactionContext);
   const [data, setData] = useState(dataJSON.en);
 
   useEffect(() => {
@@ -32,11 +34,8 @@ export const Header = () => {
 
   const copyMail = () => {
     navigator.clipboard.writeText("aitorlevi@gmail.com");
-    $(".popup-container").toggleClass("show");
-    const timer = setTimeout(() => {
-      $(".popup-container").removeClass("show");
-    }, 3000);
-    return () => clearTimeout(timer);
+    notificationContext.setNotificationText(data.copyMail);
+    notificationContext.showNotification();
   };
 
   return (
@@ -87,17 +86,13 @@ export const Header = () => {
             </h1>
             <p>
               {data.passionate}&nbsp;
-              <span className="brand-color">&lt;{data.developer} /&gt;</span>
+              <span className="brand-color">
+                &lt;{data.developer}&nbsp;/&gt;
+              </span>
               &nbsp;{data.experience}
             </p>
           </div>
           <div className="social">
-            <div className="popup-container">
-              <div className="popup-mail">
-                <div className="modal">{data.copyMail}</div>
-              </div>
-            </div>
-
             <ul className="details">
               <li>
                 <a href="https://github.com/aitorlevi" target="_blank">
