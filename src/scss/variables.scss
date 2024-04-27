@@ -1,11 +1,30 @@
-/* ----- COLORS ----- */
+// /* ----- LIGHT THEME COLORS ----- */
 
 $whiteColor: #ffffff;
+$blackColor: #000000;
 $backgroundColor: #e7d8dd;
-$contactBackgroundColor: #d4bbc7;
 $mainColor: #813a65;
 $lightAccentColor: #7b6f86;
 $darkAccentColor: #66375f;
 $fontColor: #0d0800;
+$iconColor: invert(30%) sepia(11%) saturate(3132%) hue-rotate(271deg)
+  brightness(86%) contrast(84%);
+
+$colorSpanish: #ba151b;
+$colorEnglish: #012169;
 
 /* ----- UNITS ----- */
+
+$borderRadius: 5px;
+$boxShadow: 0px 5px 10px 0px
+  rgba(
+    $color: var(--font),
+    $alpha: 0.7,
+  );
+
+/* ----- FONTS ----- */
+
+$medium: 500;
+$semiBold: 600;
+
+/* ----- IMAGES ----- */

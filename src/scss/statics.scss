@@ -28,17 +28,29 @@ h1 {
     font-size: 4rem;
   }
 }
+
+img.icon {
+  filter: $iconColor;
+  @include shortTransition;
+  &:hover {
+    filter: invert(8%) sepia(44%) saturate(3522%) hue-rotate(299deg)
+      brightness(99%) contrast(99%);
+  }
+}
+
 h2 {
   font-size: 2rem;
   margin: 15px 0;
+  font-weight: $semiBold;
 }
+
 h3 {
   font-size: 1.5rem;
 }
 
 p {
   line-height: 20px;
-  margin: 10px 0;
+  margin: 1rem 0;
 }
 
 a {
@@ -47,12 +59,16 @@ a {
 
 ul {
   padding-inline-start: 25px;
-  margin: 1em 0;
+  margin: 1rem 0;
 }
 
 .brand-color {
   color: $mainColor;
   font-weight: bold;
+  @include shortTransition;
+  &:hover {
+    color: $darkAccentColor;
+  }
 }
 
 input[type="text"],
@@ -61,7 +77,7 @@ textarea {
   border: none;
   background-color: $backgroundColor;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   color: $fontColor;
 
   &:focus {
@@ -70,22 +86,28 @@ textarea {
 }
 
 textarea {
-  height: 200px;
+  resize: none;
 }
 
 button,
 input[type="submit"],
 input[type="button"] {
   border: none;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   background-color: $darkAccentColor;
   padding: 10px 20px;
   font-size: 1rem;
   color: white;
   text-transform: uppercase;
-  transition: all 0.3s;
+  @include shortTransition;
 
   &:hover {
     background-color: $mainColor;
   }
+}
+
+input[type="submit"]:disabled {
+  cursor: default;
+  background-color: rgba($color: $darkAccentColor, $alpha: 0.3);
+  color: $fontColor;
 }

@@ -49,7 +49,7 @@ export const Technologies = ({ technologies }) => {
         let tech = selectTech(technology);
         return (
           <li key={index}>
-            <img src={tech.img} />
+            <img src={tech.img} className="icon" />
             {tech.name}
           </li>
         );

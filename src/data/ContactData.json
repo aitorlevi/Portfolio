@@ -10,13 +10,14 @@
       "email": "Email",
       "message": "Message",
       "submit": "Send",
+      "sendingMessage": "Sending message...",
       "messageSent": "Message sent! I'll get back to you as quickly as possible!"
     }
   },
   "es": {
     "title": "Contacto",
     "text": [
-      "¡Si quieres contactar conmigo o charlar puedes encontrarme en estas redes sociales, o enviarme un mensaje aquí!",
+      "¡Si quieres contactar conmigo o charlar puedes encontrarme en estas redes sociales, o enviarme un mensaje por aquí!",
       "¡Muchas gracias!"
     ],
     "form": {
@@ -24,6 +25,7 @@
       "email": "Email",
       "message": "Mensaje",
       "submit": "Enviar",
+      "sendingMessage": "Enviando mensaje...",
       "messageSent": "¡Mensaje enviado! ¡Té responderé lo mas rápido posible!"
     }
   }

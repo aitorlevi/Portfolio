@@ -9,16 +9,16 @@ export const Resume = () => {
   const [data, setData] = useState(dataJSON.en);
 
   useEffect(() => {
-    setData(dataJSON[languageContext.currentLanguage]);
+    setData(dataJSON[languageContext]);
   }, []);
 
   useEffect(() => {
-    setData(dataJSON[languageContext.currentLanguage]);
-  }, [languageContext.currentLanguage]);
+    setData(dataJSON[languageContext]);
+  }, [languageContext]);
 
   const toggleContent = (index) => {
     $(`#collapsible${index}`).toggleClass("active");
-    $(`#content${index}`).slideToggle("slow");
+    $(`#content${index}`).slideToggle(200);
   };
 
   return (

@@ -7,12 +7,12 @@ export const AboutMe = () => {
   const [data, setData] = useState(dataJSON.en);
 
   useEffect(() => {
-    setData(dataJSON[languageContext.currentLanguage]);
+    setData(dataJSON[languageContext]);
   }, []);
 
   useEffect(() => {
-    setData(dataJSON[languageContext.currentLanguage]);
-  }, [languageContext.currentLanguage]);
+    setData(dataJSON[languageContext]);
+  }, [languageContext]);
 
   return (
     <>

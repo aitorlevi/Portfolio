@@ -8,12 +8,12 @@ export const Toolkit = () => {
   const [data, setData] = useState(dataJSON.en);
 
   useEffect(() => {
-    setData(dataJSON[languageContext.currentLanguage]);
+    setData(dataJSON[languageContext]);
   }, []);
 
   useEffect(() => {
-    setData(dataJSON[languageContext.currentLanguage]);
-  }, [languageContext.currentLanguage]);
+    setData(dataJSON[languageContext]);
+  }, [languageContext]);
   return (
     <section className="toolkit-section">
       <h2>{data.title}</h2>

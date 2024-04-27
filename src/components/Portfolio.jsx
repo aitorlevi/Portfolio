@@ -23,7 +23,7 @@ export const Portfolio = () => {
 
   return (
     <section className="portfolio-section" id="portfolio">
-      <h2>portfolio</h2>
+      <h2>Projects</h2>
       <h4>En mantenimiento...</h4>
       {/* <div className="projects-container">
         {projects.map((project, index) => {
