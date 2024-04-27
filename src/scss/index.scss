@@ -81,7 +81,7 @@ body {
         height: 100%;
         text-align: center;
         border-radius: $borderRadius;
-        @include shortTransition(transform);
+        @include shortTransition;
         transform-style: preserve-3d;
         cursor: pointer;
         .flip-card-front,
