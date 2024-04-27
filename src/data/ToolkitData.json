@@ -3,7 +3,16 @@
     "title": "My toolkit",
     "frontEnd": {
       "title": "FrontEnd",
-      "techs": ["html", "css", "js", "jquery", "scss", "ts", "react"]
+      "techs": [
+        "html",
+        "css",
+        "js",
+        "jquery",
+        "scss",
+        "ts",
+        "react",
+        "oraclejet"
+      ]
     },
     "backEnd": {
       "title": "BackEnd",
@@ -18,7 +27,16 @@
     "title": "Mis herramientas",
     "frontEnd": {
       "title": "FrontEnd",
-      "techs": ["html", "css", "js", "jquery", "scss", "ts", "react"]
+      "techs": [
+        "html",
+        "css",
+        "js",
+        "jquery",
+        "scss",
+        "ts",
+        "react",
+        "oraclejet"
+      ]
     },
     "backEnd": {
       "title": "BackEnd",

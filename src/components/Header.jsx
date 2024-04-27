@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import github from "../assets/other/github.svg";
-import linkedin from "../assets/other/linkedin.svg";
-import resume from "../assets/other/resume.svg";
-import mail from "../assets/other/mail.svg";
+import github from "../assets/icons/other/github.svg";
+import linkedin from "../assets/icons/other/linkedin.svg";
+import resume from "../assets/icons/other/resume.svg";
+import mail from "../assets/icons/other/mail.svg";
 import dataJSON from "../data/HeaderData.json";
-import resumePDF from "../documents/Resume_Aitor_Ledesma.pdf";
-import $ from "jquery";
+import resumePDF from "../assets/documents/Resume_Aitor_Ledesma.pdf";
 import { CurrentLanguageContext } from "../App";
 import { NotifiactionContext } from "../App";
 
@@ -13,7 +12,6 @@ export const Header = () => {
   const languageContext = useContext(CurrentLanguageContext);
   const notificationContext = useContext(NotifiactionContext);
   const [data, setData] = useState(dataJSON.en);
-  const checkboxLanguage = useRef();
 
   useEffect(() => {
     setData(dataJSON[languageContext]);

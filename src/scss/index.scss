@@ -67,33 +67,88 @@ body {
   }
 }
 
-.portfolio-section {
+.projects-section {
   @include container-section;
   .projects-container {
-    @include flex(row wrap, center, flex-start, 50px);
-    .project {
-      position: relative;
-      .project-image {
-        display: block;
+    @include flex(column, center, flex-start);
+    width: 100%;
+    .project-card {
+      height: 500px;
+      perspective: 1000px;
+      .flip-card-inner {
+        position: relative;
         width: 100%;
+        height: 100%;
+        text-align: center;
         border-radius: $borderRadius;
-      }
-      .info {
-        opacity: 0;
-        position: absolute;
-        inset: 0px;
-        text-align: left;
-        padding: 10px;
-        border-radius: $borderRadius;
-        @include longTransition();
-      }
-      &:hover {
-        .info {
-          display: flex;
-          flex-flow: row wrap;
-          opacity: 1;
-          background-color: ($mainColor + cc);
+        @include shortTransition(transform);
+        transform-style: preserve-3d;
+        cursor: pointer;
+        .flip-card-front,
+        .flip-card-back {
+          @include flex(
+            column,
+            $align-items: center,
+            $justify-content: space-between,
+            $gap: 0
+          );
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          background-color: rgba($color: $whiteColor, $alpha: 0.8);
+          padding: 20px;
+          border-radius: $borderRadius;
         }
+        .flip-card-front {
+          .image-container {
+            width: 100%;
+            flex: 1;
+            align-content: center;
+            img {
+              width: 200px;
+              height: auto;
+              border-radius: 50%;
+              box-shadow: 0px 0px 10px 3px $mainColor;
+              border: 1px solid $mainColor;
+              @include shortTransition();
+              &:hover {
+                width: 225px;
+              }
+            }
+          }
+        }
+        .flip-card-back {
+          text-align: left;
+          transform: rotateY(180deg);
+          .employee {
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-weight: $medium;
+            padding: 5px 10px;
+            border-radius: 0 5px 0 5px;
+            background-color: rgba($color: $mainColor, $alpha: 0.3);
+          }
+          .watch-more {
+            width: 100%;
+            @include flex(row, $justify-content: space-around);
+          }
+        }
+        &.active {
+          transform: rotateY(180deg);
+        }
+        &:hover {
+          box-shadow: 0px 0px 3px 0px $fontColor;
+        }
+      }
+    }
+    @include mediaQuery(M) {
+      flex-flow: row wrap;
+      .project-card {
+        flex: 1;
+        min-width: 270px;
       }
     }
   }
@@ -219,7 +274,7 @@ body {
   @include ulFlex($flex-flow: row wrap, $justify-content: center, $gap: 30px);
   margin: 20px 0;
   li {
-    @include flex($flex-flow: column, $align-items: center);
+    @include flex(column, $align-items: center);
     font-weight: $medium;
     width: fit-content;
     img {
@@ -230,6 +285,18 @@ body {
   }
   @include mediaQuery(M) {
     justify-content: flex-start;
+  }
+  &.small {
+    gap: 20px;
+    li {
+      flex-flow: row;
+      gap: 5px;
+      font-size: 0.8rem;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }
 

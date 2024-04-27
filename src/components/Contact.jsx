@@ -2,8 +2,8 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import dataJSON from "../data/ContactData.json";
 import { CurrentLanguageContext } from "../App";
 import { NotifiactionContext } from "../App";
-import github from "../assets/other/github.svg";
-import linkedin from "../assets/other/linkedin.svg";
+import github from "../assets/icons/other/github.svg";
+import linkedin from "../assets/icons/other/linkedin.svg";
 import emailjs from "@emailjs/browser";
 import $ from "jquery";
 

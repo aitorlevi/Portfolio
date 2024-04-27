@@ -1,0 +1,84 @@
+{
+  "en": {
+    "title": "Projects",
+    "employeeWork": "Employed at",
+    "freelanceWork": "Freelance",
+    "noCode": "As you will understand, I have no code or demo to show you.",
+    "projects": [
+      {
+        "title": "Würth App",
+        "img": "wurth",
+        "isEmployee": true,
+        "company": "Avanttic",
+        "description": "E-commerce application for Android and IOS in which for 1 year I had to maintain and incorporate new features for better usability and user experience.",
+        "isCode": false,
+        "demo": "",
+        "code": "",
+        "technologies": ["html", "scss", "js", "ts", "oraclejet"]
+      },
+      {
+        "title": "Affinity",
+        "img": "ultima",
+        "isEmployee": true,
+        "company": "Avanttic",
+        "description": "Migration of the website to a new CRM. Redesigning and developing new functionalities.",
+        "isCode": false,
+        "demo": "",
+        "code": "",
+        "technologies": ["html", "css", "js", "jquery"]
+      },
+      {
+        "title": "Atradius",
+        "img": "atradius",
+        "isEmployee": true,
+        "company": "CGI",
+        "description": "Multinational project in which my main functions were to develop new functionalities, optimise resources, correct errors and carry out unit tests.",
+        "isCode": false,
+        "demo": "",
+        "code": "",
+        "technologies": ["html", "scss", "ts", "react", "oraclejet"]
+      }
+    ]
+  },
+  "es": {
+    "title": "Proyectos",
+    "employeeWork": "Empleado en",
+    "freelanceWork": "Freelance",
+    "noCode": "Cómo entenderás, no dispongo de código ni demo para mostrarte.",
+    "projects": [
+      {
+        "title": "Würth App",
+        "img": "wurth",
+        "isEmployee": true,
+        "company": "Avanttic",
+        "description": "Aplicación de comercio electrónico para Android e IOS en la que durante 1 año tuve que mantener e incorporar nuevas funciones para una mejor usabilidad y experiencia de usuario.",
+        "isCode": false,
+        "demo": "",
+        "code": "",
+        "technologies": ["html", "scss", "js", "ts", "oraclejet"]
+      },
+      {
+        "title": "Purina",
+        "img": "ultima",
+        "isEmployee": true,
+        "company": "Avanttic",
+        "description": "Migración de la página web a un nuevo CRM. Rediseñando y desarrollando nuevas funcionalidades.",
+        "isCode": false,
+        "demo": "",
+        "code": "",
+        "technologies": ["html", "css", "js", "jquery"]
+      },
+      {
+        "title": "Atradius",
+        "img": "atradius",
+        "isEmployee": true,
+        "company": "CGI",
+        "description": "Proyecto multinacional en el que mis funciones principales eran desarrollar nuevas funcionalidades, optimizar recursos, corregir errores y realizar pruebas unitarias.",
+        "isCode": false,
+        "demo": "",
+        "code": "",
+        "technologies": ["html", "scss", "ts", "react", "oraclejet"]
+      }
+    ]
+  }
+}

@@ -1,18 +1,19 @@
 import React from "react";
-import react from "../assets/frontEnd/react.svg";
-import css from "../assets/frontEnd/css.svg";
-import html from "../assets/frontEnd/html.svg";
-import js from "../assets/frontEnd/js.svg";
-import node from "../assets/backEnd/node.svg";
-import mongo from "../assets/backEnd/mongo.svg";
-import firebase from "../assets/backEnd/firebase.svg";
-import photoshop from "../assets/design/photoshop.svg";
-import figma from "../assets/design/figma.svg";
-import scss from "../assets/frontEnd/scss.svg";
-import ts from "../assets/frontEnd/ts.svg";
-import jquery from "../assets/frontEnd/jquery.svg";
+import react from "../assets/icons/frontEnd/react.svg";
+import css from "../assets/icons/frontEnd/css.svg";
+import html from "../assets/icons/frontEnd/html.svg";
+import js from "../assets/icons/frontEnd/js.svg";
+import node from "../assets/icons/backEnd/node.svg";
+import mongo from "../assets/icons/backEnd/mongo.svg";
+import firebase from "../assets/icons/backEnd/firebase.svg";
+import photoshop from "../assets/icons/design/photoshop.svg";
+import figma from "../assets/icons/design/figma.svg";
+import scss from "../assets/icons/frontEnd/scss.svg";
+import ts from "../assets/icons/frontEnd/ts.svg";
+import jquery from "../assets/icons/frontEnd/jquery.svg";
+import oraclejet from "../assets/icons/frontEnd/oraclejet.svg";
 
-export const Technologies = ({ technologies }) => {
+export const Technologies = ({ technologies, small = false }) => {
   const selectTech = (name) => {
     switch (name) {
       case "html":
@@ -29,6 +30,8 @@ export const Technologies = ({ technologies }) => {
         return { img: ts, name: "TypeScript" };
       case "react":
         return { img: react, name: "React" };
+      case "oraclejet":
+        return { img: oraclejet, name: "Oracle JET" };
       case "node":
         return { img: node, name: "Node.js" };
       case "mongo":
@@ -43,8 +46,9 @@ export const Technologies = ({ technologies }) => {
         break;
     }
   };
+
   return (
-    <ul className="technologies">
+    <ul className={small ? "technologies small" : "technologies"}>
       {technologies.map((technology, index) => {
         let tech = selectTech(technology);
         return (

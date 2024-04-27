@@ -1,13 +1,13 @@
 import { Header } from "./components/Header";
-import { Portfolio } from "./components/Portfolio";
 import { Resume } from "./components/Resume";
 import { AboutMe } from "./components/AboutMe";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { Toolkit } from "./components/Toolkit";
-import { createContext, useEffect, useRef, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import $ from "jquery";
 import { Notification } from "./components/Notification";
+import { Projects } from "./components/Projects";
 
 export const CurrentLanguageContext = createContext(null);
 export const NotifiactionContext = createContext(null);
@@ -16,7 +16,6 @@ function App() {
   const [notificationText, setNotificationText] = useState("");
 
   useEffect(() => {
-    console.log(window.matchMedia("(prefers-color-scheme:dark)"));
     if (navigator.language.split("-")[0] === "es") {
       $("#checkboxLanguage").addClass("spanish");
       setCurrentLanguage("es");
@@ -49,10 +48,6 @@ function App() {
     return () => clearTimeout(timer);
   };
 
-  const toggleColorMode = () => {
-    $("#toggleColorMode").toggleClass("light");
-  };
-
   return (
     <>
       <CurrentLanguageContext.Provider value={currentLanguage}>
@@ -61,7 +56,7 @@ function App() {
         >
           <Header />
           <Resume />
-          <Portfolio />
+          <Projects />
           <AboutMe />
           <Toolkit />
           <Contact />
