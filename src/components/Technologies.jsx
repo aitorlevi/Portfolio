@@ -1,4 +1,3 @@
-import React from "react";
 import react from "../assets/icons/frontEnd/react.svg";
 import css from "../assets/icons/frontEnd/css.svg";
 import html from "../assets/icons/frontEnd/html.svg";
@@ -53,7 +52,11 @@ export const Technologies = ({ technologies, small = false }) => {
         let tech = selectTech(technology);
         return (
           <li key={index}>
-            <img src={tech.img} className="icon" />
+            <img
+              src={tech.img}
+              className="icon"
+              alt={`${tech.name} technology`}
+            />
             {tech.name}
           </li>
         );

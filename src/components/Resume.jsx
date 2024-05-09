@@ -10,10 +10,6 @@ export const Resume = () => {
 
   useEffect(() => {
     setData(dataJSON[languageContext]);
-  }, []);
-
-  useEffect(() => {
-    setData(dataJSON[languageContext]);
   }, [languageContext]);
 
   const toggleContent = (index) => {

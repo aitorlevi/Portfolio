@@ -32,7 +32,7 @@
         "img": "atradius",
         "isEmployee": true,
         "company": "CGI",
-        "description": "Multinational project in which my main functions were to develop new functionalities, optimise resources, correct errors and carry out unit tests.",
+        "description": "Multinational project in which my main functions were to develop new functionalities, optimize resources, correct errors and carry out unit tests.",
         "isCode": false,
         "demo": "",
         "code": "",
@@ -58,7 +58,7 @@
         "technologies": ["html", "scss", "js", "ts", "oraclejet"]
       },
       {
-        "title": "Purina",
+        "title": "Affinity",
         "img": "ultima",
         "isEmployee": true,
         "company": "Avanttic",

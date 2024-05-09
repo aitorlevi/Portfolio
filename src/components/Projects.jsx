@@ -1,19 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import $ from "jquery";
 import dataJSON from "../data/ProjectsData.json";
 import { CurrentLanguageContext } from "../App";
-import ultima from "../assets/images/ultima.png";
-import wurth from "../assets/images/wurth.png";
-import atradius from "../assets/images/atradius.png";
+import ultima from "../assets/images/ultima.webp";
+import wurth from "../assets/images/wurth.webp";
+import atradius from "../assets/images/atradius.webp";
 import { Technologies } from "./Technologies";
 
 export const Projects = () => {
   const languageContext = useContext(CurrentLanguageContext);
   const [data, setData] = useState(dataJSON.en);
-
-  useEffect(() => {
-    setData(dataJSON[languageContext]);
-  }, []);
 
   useEffect(() => {
     setData(dataJSON[languageContext]);
@@ -42,7 +38,7 @@ export const Projects = () => {
       <div className="projects-container">
         {data.projects.map((project, index) => {
           return (
-            <article className="project-card">
+            <article key={index} className="project-card">
               <div
                 className="flip-card-inner"
                 id={`flipCard${index}`}
@@ -50,7 +46,7 @@ export const Projects = () => {
               >
                 <div className="flip-card-front">
                   <div className="image-container">
-                    <img src={selectImage(project.img)} />
+                    <img src={selectImage(project.img)} alt={project.img} />
                   </div>
 
                   <h3>{project.title}</h3>

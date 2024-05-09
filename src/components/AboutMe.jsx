@@ -1,14 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import dataJSON from "../data/AboutMeData.json";
+import meImage from "../assets/images/me.webp";
 import { CurrentLanguageContext } from "../App";
 
 export const AboutMe = () => {
   const languageContext = useContext(CurrentLanguageContext);
   const [data, setData] = useState(dataJSON.en);
-
-  useEffect(() => {
-    setData(dataJSON[languageContext]);
-  }, []);
 
   useEffect(() => {
     setData(dataJSON[languageContext]);
@@ -25,7 +22,7 @@ export const AboutMe = () => {
             })}
           </div>
           <div className="bio-img">
-            <img src="../images/about-me/me.png" />
+            <img src={meImage} alt="Aitor Ledesma" />
           </div>
         </div>
       </section>

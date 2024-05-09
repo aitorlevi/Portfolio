@@ -10,7 +10,7 @@ import { Notification } from "./components/Notification";
 import { Projects } from "./components/Projects";
 
 export const CurrentLanguageContext = createContext(null);
-export const NotifiactionContext = createContext(null);
+export const NotificationContext = createContext(null);
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState("en");
   const [notificationText, setNotificationText] = useState("");
@@ -51,7 +51,7 @@ function App() {
   return (
     <>
       <CurrentLanguageContext.Provider value={currentLanguage}>
-        <NotifiactionContext.Provider
+        <NotificationContext.Provider
           value={{ setNotificationText, showNotification }}
         >
           <Header />
@@ -61,10 +61,11 @@ function App() {
           <Toolkit />
           <Contact />
           <Footer />
-        </NotifiactionContext.Provider>
+        </NotificationContext.Provider>
       </CurrentLanguageContext.Provider>
       <div className="language-container">
         <div className="language-selector">
+          <label htmlFor="checkboxLanguage"></label>
           <input
             type="checkbox"
             id="checkboxLanguage"

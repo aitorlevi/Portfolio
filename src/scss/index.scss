@@ -37,7 +37,8 @@ body {
     ul {
       @include ulFlex(column, $justify-content: left, $gap: 10px);
       li {
-        a {
+        a,
+        div {
           text-decoration: none;
           color: $fontColor;
           display: flex;

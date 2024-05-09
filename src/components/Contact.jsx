@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import dataJSON from "../data/ContactData.json";
 import { CurrentLanguageContext } from "../App";
-import { NotifiactionContext } from "../App";
+import { NotificationContext } from "../App";
 import github from "../assets/icons/other/github.svg";
 import linkedin from "../assets/icons/other/linkedin.svg";
 import emailjs from "@emailjs/browser";
@@ -9,14 +9,10 @@ import $ from "jquery";
 
 export const Contact = () => {
   const languageContext = useContext(CurrentLanguageContext);
-  const notificationContext = useContext(NotifiactionContext);
+  const notificationContext = useContext(NotificationContext);
   const [data, setData] = useState(dataJSON.en);
   const form = useRef();
   const submit = useRef();
-
-  useEffect(() => {
-    setData(dataJSON[languageContext]);
-  }, []);
 
   useEffect(() => {
     setData(dataJSON[languageContext]);
@@ -54,16 +50,21 @@ export const Contact = () => {
             })}
             <ul className="social">
               <li>
-                <a href="https://github.com/aitorlevi" target="_blank">
-                  <img src={github} className="icon" />
+                <a
+                  href="https://github.com/aitorlevi"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <img src={github} className="icon" alt="GitHub" />
                 </a>
               </li>
               <li>
                 <a
                   href="https://www.linkedin.com/in/aitor-ledesma/"
                   target="_blank"
+                  aria-label="Linkedin"
                 >
-                  <img src={linkedin} className="icon" />
+                  <img src={linkedin} className="icon" alt="Linkedin" />
                 </a>
               </li>
             </ul>
