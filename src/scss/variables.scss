@@ -16,10 +16,10 @@ $colorEnglish: #012169;
 /* ----- UNITS ----- */
 
 $borderRadius: 5px;
-$boxShadow: 0px 5px 10px 0px
+$boxShadow: 0px 4px 6px 0px
   rgba(
-    $color: var(--font),
-    $alpha: 0.7,
+    $color: var($fontColor),
+    $alpha: 0.2,
   );
 
 /* ----- FONTS ----- */
