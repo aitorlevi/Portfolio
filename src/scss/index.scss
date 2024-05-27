@@ -120,8 +120,7 @@ body {
               width: 200px;
               height: auto;
               border-radius: 50%;
-              box-shadow: 0px 4px 6px 3px
-                rgba($color: var($mainColor), $alpha: 0.2);
+              box-shadow: 0px 4px 6px 3px rgba($color: $mainColor, $alpha: 0.2);
               @include shortTransition();
               &:hover {
                 width: 225px;
