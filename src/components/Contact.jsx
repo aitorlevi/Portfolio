@@ -7,6 +7,10 @@ import linkedin from "../assets/icons/other/linkedin.svg";
 import emailjs from "@emailjs/browser";
 import $ from "jquery";
 
+const SERVICE = import.meta.env.VITE_EMAILJS_SERVICE;
+const TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE;
+const API_KEY = import.meta.env.VITE_EMAILJS_API_KEY;
+
 export const Contact = () => {
   const languageContext = useContext(CurrentLanguageContext);
   const notificationContext = useContext(NotificationContext);
@@ -22,8 +26,8 @@ export const Contact = () => {
     e.preventDefault();
     $(submit.current).attr("disabled", true);
     emailjs
-      .sendForm("service_i4lhr9k", "template_2fgp6e4", form.current, {
-        publicKey: "g9wYisThgHuwKMggl",
+      .sendForm(SERVICE, TEMPLATE, form.current, {
+        publicKey: API_KEY,
       })
       .then(
         () => {
