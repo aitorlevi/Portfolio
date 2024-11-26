@@ -4,7 +4,8 @@ import linkedin from "../assets/icons/other/linkedin.svg";
 import resume from "../assets/icons/other/resume.svg";
 import mail from "../assets/icons/other/mail.svg";
 import dataJSON from "../data/HeaderData.json";
-import resumePDF from "../assets/documents/Resume_Aitor_Ledesma.pdf";
+import CVEN from "../assets/documents/CV_Aitor_Ledesma_EN.pdf";
+import CVES from "../assets/documents/CV_Aitor_Ledesma_ES.pdf";
 import { CurrentLanguageContext } from "../App";
 import { NotificationContext } from "../App";
 
@@ -75,7 +76,7 @@ export const Header = () => {
               </li>
               <li>
                 <a
-                  href={resumePDF}
+                  href={languageContext === "en" ? CVEN : CVES}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Resume"

@@ -5,6 +5,7 @@ import { CurrentLanguageContext } from "../App";
 import ultima from "../assets/images/ultima.webp";
 import wurth from "../assets/images/wurth.webp";
 import atradius from "../assets/images/atradius.webp";
+import amminstalaciones from "../assets/images/amminstalaciones.webp";
 import { Technologies } from "./Technologies";
 
 export const Projects = () => {
@@ -28,6 +29,8 @@ export const Projects = () => {
         return atradius;
       case "wurth":
         return wurth;
+      case "amminstalaciones":
+        return amminstalaciones;
       default:
         break;
     }
@@ -65,8 +68,16 @@ export const Projects = () => {
 
                     {project.isCode ? (
                       <div className="watch-more">
-                        <button onClick={() => alert("DEMO")}>Demo</button>
-                        <button onClick={() => alert("Código")}>Código</button>
+                        <button
+                          onClick={() => window.open(project.demo, "_blank")}
+                        >
+                          Demo
+                        </button>
+                        <button
+                          onClick={() => window.open(project.code, "_blank")}
+                        >
+                          Código
+                        </button>
                       </div>
                     ) : (
                       <p>{data.noCode}</p>

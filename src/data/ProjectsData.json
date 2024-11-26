@@ -37,6 +37,17 @@
         "demo": "",
         "code": "",
         "technologies": ["html", "scss", "ts", "react", "oraclejet"]
+      },
+      {
+        "title": "A.M.M. Instalaciones",
+        "img": "amminstalaciones",
+        "isEmployee": false,
+        "company": "Freelance",
+        "description": "Landing page for a company dedicated to the installation of air conditioning, heating and plumbing. The page is made with React.",
+        "isCode": true,
+        "demo": "amminstalaciones.es",
+        "code": "https://github.com/aitorlevi/amminstalaciones",
+        "technologies": ["html", "scss", "ts", "react"]
       }
     ]
   },
@@ -78,6 +89,17 @@
         "demo": "",
         "code": "",
         "technologies": ["html", "scss", "ts", "react", "oraclejet"]
+      },
+      {
+        "title": "A.M.M. Instalaciones",
+        "img": "amminstalaciones",
+        "isEmployee": false,
+        "company": "Freelance",
+        "description": "Landing page para una compañia dedicada a realizar reformas de todo tipo. The page is made with React.",
+        "isCode": true,
+        "demo": "https://www.amminstalaciones.es",
+        "code": "https://github.com/aitorlevi/amminstalaciones",
+        "technologies": ["html", "scss", "ts", "react"]
       }
     ]
   }
